@@ -1,15 +1,17 @@
 import { Star } from "lucide-react";
 import SmallCard from "../../ui/SmallCard";
-import students from "../../assets/Students.png";
 import HeroHeading from "./HeroHeading";
-
+import students from "../../assets/Students.png";
 import ornaments from "../../assets/3d ornament.png";
 import limeEllipse from "../../assets/Lime Ellipse.png";
 import person from "../../assets/Image.png";
 
 const Hero = () => {
   return (
-    <section className="bg-brand-blue min-h-screen overflow-hidden pt-20 relative flex flex-col">
+    <section
+      aria-labelledby="hero-heading"
+      className="bg-brand-blue min-h-screen overflow-hidden pt-20 relative flex flex-col"
+    >
       {/* Decorative ornaments */}
       <img
         src={ornaments}
@@ -21,7 +23,10 @@ const Hero = () => {
       {/* Hero Heading */}
       <HeroHeading />
 
-      <div className="relative mx-auto mt-auto h-[42vh] min-h-65 w-full max-w-6xl md:h-[40vh] lg:mt-4 lg:h-70">
+      <div
+        aria-label="Course highlights"
+        className="relative mx-auto mt-auto h-[42vh] min-h-65 w-full max-w-6xl md:h-[40vh] lg:mt-4 lg:h-70"
+      >
         {/* Ellipse */}
         <img
           src={limeEllipse}
@@ -29,6 +34,7 @@ const Hero = () => {
           aria-hidden="true"
           className="absolute bottom-0 left-1/2 z-0 w-[75%] max-w-150 -translate-x-1/2"
         />
+
         {/* Person */}
         <img
           src={person}
@@ -42,7 +48,7 @@ const Hero = () => {
           <SmallCard title="UI/UX Design">
             <div className="flex gap-1 text-[12px] text-light-gray">
               <span>200 Courses</span>
-              <span>•</span>
+              <span aria-hidden="true">•</span>
               <span>1000+ Students</span>
             </div>
           </SmallCard>
@@ -51,12 +57,20 @@ const Hero = () => {
         {/* Progress card */}
         <div className="absolute bottom-[25%] right-[22%] z-20">
           <SmallCard title="Learning Progress">
-            <p className="poppins font-semibold md:text-3xl lg:text-5xl">55%</p>
+            <p
+              id="learning-progress-value"
+              className="poppins font-semibold md:text-3xl lg:text-5xl"
+            >
+              55%
+            </p>
             <div
               role="progressbar"
+              aria-label="Learning progress"
               aria-valuenow={55}
               aria-valuemin={0}
               aria-valuemax={100}
+              aria-valuetext="55 percent complete"
+              aria-describedby="learning-progress-value"
               className="mt-3 h-2 w-45.25 overflow-hidden rounded-full bg-[#F6F6F6]"
             >
               <div
@@ -72,13 +86,17 @@ const Hero = () => {
           <SmallCard title="Happy Students">
             <p className="flex items-center gap-1 text-[12px]">
               4.5
-              <span className="text-light-gray">(240)</span>
+              <span className="text-light-gray">(240 reviews)</span>
               <span>
-                <Star className="w-4 fill-electric-lime text-electric-lime" />
+                <Star
+                  aria-hidden="true"
+                  className="w-4 fill-electric-lime text-electric-lime"
+                />
+                <span className="sr-only">out of 5 stars</span>
               </span>
             </p>
             <div className="mt-3">
-              <img src={students} alt="Happy sudents" />
+              <img src={students} alt="Student avatars representing happy students" />
             </div>
           </SmallCard>
         </div>

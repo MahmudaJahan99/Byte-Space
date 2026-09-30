@@ -1,9 +1,21 @@
-interface ButtonProps {
-    buttonName: string
+import type { ButtonHTMLAttributes } from "react";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  buttonName: string;
 }
-const Button = ({buttonName}: ButtonProps) => {
+
+const Button = ({
+  buttonName,
+  type = "button",
+  className = "",
+  ...props
+}: ButtonProps) => {
   return (
-    <button className="rounded-full bg-electric-lime px-3 md:px-6 py-2 md:py-4 font-medium ">
+    <button
+      type={type}
+      className={`rounded-full bg-electric-lime px-3 py-2 font-medium transition-colors hover:bg-electric-lime/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-lime md:px-6 md:py-4 ${className}`}
+      {...props}
+    >
       {buttonName}
     </button>
   );

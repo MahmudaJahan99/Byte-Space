@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/Header_Logo.png"
+import logo from "../assets/Header_Logo.png";
 
 interface LogoProps {
   onClick?: () => void;
@@ -14,7 +14,7 @@ const Logo = ({ onClick, className = "" }: LogoProps) => {
       aria-label="ByteSpace home"
       className={`inline-flex items-center ${className}`}
     >
-      <img src={logo} alt="Logo" className="h-auto w-auto" />
+      <img src={logo} alt="ByteSpace" className="h-auto w-auto" />
     </Link>
   );
 };
