@@ -1,4 +1,5 @@
 import CategoryPills from "./CategoryPills";
+import CourseCards from "./CourseCards";
 
 const ExploreCourses = () => {
   return (
@@ -18,6 +19,9 @@ const ExploreCourses = () => {
 
       {/* Category pills */}
       <CategoryPills />
+
+      {/* Courses */}
+      <CourseCards />
     </section>
   );
 };
