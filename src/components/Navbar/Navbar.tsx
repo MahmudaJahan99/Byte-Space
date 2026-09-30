@@ -39,9 +39,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-300 h-30 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-300 h-20 ${
         isScrolled
-          ? "border-b border-white/10 bg-blue-900/60 shadow-lg backdrop-blur-lg"
+          ? "border-b border-white/10 bg-brand-blue shadow-lg backdrop-blur-lg"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -87,11 +87,10 @@ const Navbar = () => {
           <Menu className="h-7 w-7" />
         </button>
       </div>
-      <nav />
 
       {/* Mobile Fullscreen Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-60 flex h-screen w-full flex-col bg-blue-950/95 backdrop-blur-2xl md:hidden">
+        <div className="fixed inset-0 z-60 flex h-screen w-full flex-col bg-brand-blue backdrop-blur-2xl md:hidden">
           {/* Mobile Menu Header */}
           <div className="flex h-16 items-center justify-between px-4">
             <Logo onClick={closeMenu} />
