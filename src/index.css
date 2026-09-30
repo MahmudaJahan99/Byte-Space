@@ -2,11 +2,14 @@
 
 @theme {
     --color-brand-blue: #003BE2;
+    --color-electric-blue: #003BE2;
     --color-dark-gray: #242528;
+    --color-dark-gray2: #4F4F4F;
     --color-light-gray: #82868E;
     --color-lightest-gray: #F5F5F6;
     --color-electric-lime: #CBFC01;
     --color-gray-white: #E5E6E8;
+    --color-gray-border: #CED0D3;
 }
 
 body {

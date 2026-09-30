@@ -1,5 +1,6 @@
 import CategoryPills from "./CategoryPills";
 import CourseCards from "./CourseCards";
+import TopicCards from "./TopicCards";
 
 const ExploreCourses = () => {
   return (
@@ -22,6 +23,23 @@ const ExploreCourses = () => {
 
       {/* Courses */}
       <CourseCards />
+
+      <article>
+        <h3 className="poppins font-semibold text-lg md:text-2xl lg:text-4xl leading-[1.2] tracking-tight">
+          Explore Diverse Learning Paths at Bytespace
+        </h3>
+
+        <p className="text-light-gray">
+          At Bytespace, we believe in empowering individuals through knowledge.
+          Our diverse range of courses spans various fields, ensuring there's
+          something for everyone. Unleash your potential and explore our
+          carefully curated categories.
+        </p>
+
+ 
+          <TopicCards />
+   
+      </article>
     </section>
   );
 };
