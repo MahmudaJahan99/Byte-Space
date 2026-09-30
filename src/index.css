@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+.plus-jakarta-sans {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.poppins {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: blue;
+}
