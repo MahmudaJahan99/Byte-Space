@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import Logo from "../../ui/Logo";
 
@@ -19,27 +19,65 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   // Blue glass background after the user scrolls
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
-    onScroll(); // set correct state on first render
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   // Lock page scroll while the mobile menu is open
   useEffect(() => {
+    if (!isMenuOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
+
+    closeButtonRef.current?.focus();
+
     return () => {
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
 
-  const closeMenu = () => setIsMenuOpen(false);
+  // Allow users to close the mobile menu with Escape
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
+  const openMenu = () => {
+    setIsMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    menuButtonRef.current?.focus();
+  };
 
   return (
     <nav
-      className={`fixed top-0 z-999 w-full transition-all duration-300 h-20 ${
+      aria-label="Primary navigation"
+      className={`fixed top-0 z-999 w-full transition-all duration-300 h-20 motion-reduce:transition-none ${
         isScrolled
           ? "border-b border-white/10 bg-brand-blue shadow-lg backdrop-blur-lg"
           : "border-b border-transparent bg-transparent"
@@ -51,7 +89,10 @@ const Navbar = () => {
         <Logo />
 
         {/* Center Navigation */}
-        <div className="hidden items-center justify-center gap-8 md:flex">
+        <div
+          aria-label="Main navigation links"
+          className="hidden items-center justify-center gap-8 md:flex"
+        >
           {navLinksCenter.map((link) => (
             <Link
               key={link.to}
@@ -79,29 +120,39 @@ const Navbar = () => {
 
         {/* Mobile Hamburger */}
         <button
+          ref={menuButtonRef}
           type="button"
-          onClick={() => setIsMenuOpen(true)}
-          aria-label="Open menu"
+          onClick={openMenu}
+          aria-label="Open navigation menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
           className="p-2 text-white md:hidden"
         >
-          <Menu className="h-7 w-7" />
+          <Menu className="h-7 w-7" aria-hidden="true" />
         </button>
       </div>
 
       {/* Mobile Fullscreen Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-60 flex h-screen w-full flex-col bg-brand-blue backdrop-blur-2xl md:hidden">
+        <div
+          id="mobile-navigation"
+          className="fixed inset-0 z-60 flex h-screen w-full flex-col bg-brand-blue backdrop-blur-2xl md:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation menu"
+        >
           {/* Mobile Menu Header */}
           <div className="flex h-16 items-center justify-between px-4">
             <Logo onClick={closeMenu} />
 
             <button
+              ref={closeButtonRef}
               type="button"
               onClick={closeMenu}
-              aria-label="Close menu"
+              aria-label="Close navigation menu"
               className="p-2 text-white"
             >
-              <X className="h-7 w-7" />
+              <X aria-hidden="true" className="h-7 w-7" />
             </button>
           </div>
 
