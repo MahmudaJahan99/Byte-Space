@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
-.plus-jakarta-sans {
+@theme {
+    --color-brand-blue: #003BE2;
+    --color-dark-gray: #242528;
+    --color-light-gray: #82868E;
+    --color-electric-lime: #CBFC01;
+    --color-gray-white: #E5E6E8;
+}
+
+body {
+    /* background-color: #003be2; */
+    color: #242528;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -8,6 +18,8 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    background-color: blue;
+@media (min-width: 2560px) {
+    body {
+        zoom: 1.5;
+    }
 }
