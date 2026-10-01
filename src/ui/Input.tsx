@@ -1,0 +1,42 @@
+import type { LucideIcon } from "lucide-react";
+interface InputProps {
+  label: string;
+  icon: LucideIcon;
+  inputType: string;
+  inputName: string;
+  inputId: string;
+  inputPlaceholder: string;
+}
+
+const Input = ({
+  label,
+  icon: Icon,
+  inputType,
+  inputName,
+  inputId,
+  inputPlaceholder,
+}: InputProps) => {
+  return (
+    <div className="relative flex-1">
+      <label htmlFor="course-search" className="sr-only">
+        {label}
+      </label>
+
+      <Icon
+        aria-hidden="true"
+        size={20}
+        className="pointer-events-none absolute top-1/2 left-6 z-10 -translate-y-1/2 text-light-gray"
+      />
+
+      <input
+        type={inputType}
+        name={inputName}
+        id={inputId}
+        placeholder={inputPlaceholder}
+        className="w-full rounded-full bg-white py-2 md:py-4 pr-4 pl-14 text-dark-gray outline-none placeholder:text-light-gray relative z-1"
+      />
+    </div>
+  );
+};
+
+export default Input;

@@ -1,5 +1,6 @@
 import { Search } from "lucide-react";
 import Button from "../../ui/Button";
+import Input from "../../ui/Input";
 
 const HeroHeading = () => {
   const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
@@ -26,25 +27,14 @@ const HeroHeading = () => {
         onSubmit={handleSearch}
         className="relative mx-auto mt-4 md:mt-6 max-w-xl flex gap-4 md:gap-6 text-sm md:text-[18px] xl:w-3xl"
       >
-        <div className="relative flex-1">
-          <label htmlFor="course-search" className="sr-only">
-            Search for courses
-          </label>
-
-          <Search
-          aria-hidden="true"
-            size={20}
-            className="pointer-events-none absolute top-1/2 left-6 -translate-y-1/2 text-light-gray"
-          />
-
-          <input
-            type="text"
-            name="course-search"
-            id="course-search"
-            placeholder="Search for courses..."
-            className="w-full rounded-full bg-white py-2 md:py-4 pr-4 pl-14 text-dark-gray outline-none placeholder:text-light-gray relative z-1"
-          />
-        </div>
+          <Input
+          label="Search for courses"
+          icon={Search}
+          inputType="text"
+          inputName="course-search"
+          inputId="course-search"
+          inputPlaceholder="Search for courses..."
+        />
         <Button buttonName="Search" />
       </form>
     </div>
