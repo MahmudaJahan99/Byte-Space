@@ -3,7 +3,7 @@ import Button from "../../ui/Button";
 
 const CreatorCTA = () => {
   return (
-    <article className="bg-brand-blue overflow-hidden relative">
+    <article className="bg-electric-blue overflow-hidden relative">
       <img
         src={ornament}
         alt=""

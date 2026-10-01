@@ -79,7 +79,7 @@ const Navbar = () => {
       aria-label="Primary navigation"
       className={`fixed top-0 z-999 w-full transition-all duration-300 h-20 motion-reduce:transition-none ${
         isScrolled
-          ? "border-b border-white/10 bg-brand-blue shadow-lg backdrop-blur-lg"
+          ? "border-b border-white/10 bg-electric-blue shadow-lg backdrop-blur-lg"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -136,7 +136,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div
           id="mobile-navigation"
-          className="fixed inset-0 z-60 flex h-screen w-full flex-col bg-brand-blue backdrop-blur-2xl md:hidden"
+          className="fixed inset-0 z-60 flex h-screen w-full flex-col bg-electric-blue backdrop-blur-2xl md:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation menu"

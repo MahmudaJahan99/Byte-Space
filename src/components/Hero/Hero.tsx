@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="bg-brand-blue min-h-screen overflow-hidden pt-20 relative flex flex-col"
+      className="bg-electric-blue min-h-screen overflow-hidden pt-20 relative flex flex-col"
     >
       {/* Decorative ornaments */}
       <img
