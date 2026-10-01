@@ -1,4 +1,5 @@
 import BrandsCarousel from "../components/BrandsCarousel/BrandsCarousel";
+import CreatorCTA from "../components/CreatorCTA/CreatorCTA";
 import ExploreCourses from "../components/Explore/ExploreCourses";
 import Hero from "../components/Hero/Hero";
 import Navbar from "../components/Navbar/Navbar";
@@ -12,6 +13,7 @@ const Home = () => {
       <BrandsCarousel />
       <ExploreCourses />
       <Spotlight />
+      <CreatorCTA />
     </>
   );
 };
