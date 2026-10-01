@@ -44,7 +44,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
               {course.title}
             </h4>
             <p className="text-xs">
-              <span className="text-dark-gray2">by</span>{" "}
+              <span className="text-dark-gray2">by</span>
               <span className="text-electric-blue">{course.instructor}</span>
             </p>
           </div>
