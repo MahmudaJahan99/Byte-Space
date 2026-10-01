@@ -23,7 +23,7 @@ const creatorBenefits = [
 
 const Spotlight = () => {
   return (
-    <section className="relative overflow-hidden bg-[#F6F6F699] ">
+    <section className="relative overflow-hidden bg-[#F6F6F699] py-10">
       {/* Decorative Circles */}
       <DecorativeCircle src={yellowTop} className="top-0 left-[5%] w-125" />
       <DecorativeCircle src={blueTop} className="top-0 right-0 w-125" />
