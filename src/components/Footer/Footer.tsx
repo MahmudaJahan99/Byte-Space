@@ -19,7 +19,7 @@ const Footer = () => {
     <>
       <footer className="page-section pb-4 text-sm">
         {/* top section */}
-        <div className="grid gap-4 md:gap-8 md:grid-cols-2 items-center">
+        <div className="grid gap-4 md:gap-8 lg:grid-cols-2 items-center">
           {/* Left section */}
           <div className="grid gap-4">
             <Logo imageSrc="/logo2.png" />
