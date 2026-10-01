@@ -3,18 +3,22 @@ import Button from "../../ui/Button";
 
 const CreatorCTA = () => {
   return (
-    <article className="bg-electric-blue overflow-hidden relative py-10">
+    <article
+      aria-labelledby="creator-cta-heading"
+      className="bg-electric-blue overflow-hidden relative py-10"
+    >
       <img
         src={ornament}
         alt=""
-        className="hidden md:block absolute inset-0 z-0 h-full w-full object-cover"
+        aria-hidden="true"
+        className="pointer-events-none hidden md:block absolute inset-0 z-0 h-full w-full object-cover"
       />
 
       {/* content */}
       <div className="page-section flex flex-col items-center text-lightest-gray text-center xl:p-12 relative z-10">
         {/* Section header */}
         <div>
-          <h3>
+          <h3 id="creator-cta-heading">
             Unlock Your Potential as a <br className="hidden md:flex" /> Creator
             with ByteSpace
           </h3>

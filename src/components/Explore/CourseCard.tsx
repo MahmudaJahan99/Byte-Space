@@ -9,12 +9,23 @@ interface CourseCardProps {
 
 const CourseCard = ({ course }: CourseCardProps) => {
   return (
-    <div className="border border-gray-border rounded-3xl p-4">
+    <article
+      aria-labelledby={`course-title-${course.id}`}
+      className="border border-gray-border rounded-3xl p-4"
+    >
       {/* Image */}
       <div className="relative mb-4">
-        <img src={course.image} alt={course.title} className="rounded-2xl" />
+        <img
+          src={course.image}
+          alt={course.title}
+          loading="lazy"
+          className="rounded-2xl"
+        />
 
-        <div className="absolute bottom-0 left-0 w-full flex justify-between p-2 xl:p-8">
+        <div
+          aria-label={`${course.lessons} lessons, ${course.duration}, ${course.comments} comments`}
+          className="absolute bottom-0 left-0 w-full flex justify-between p-2 xl:p-8"
+        >
           <GlassBadge info={`${course.lessons} Lessons`} />
           <GlassBadge info={course.duration} />
           <GlassBadge info={`${course.comments} Comments`} />
@@ -26,7 +37,10 @@ const CourseCard = ({ course }: CourseCardProps) => {
         <div className="text-left flex flex-col gap-4">
           {/* Course & Creator name  */}
           <div>
-            <h4 className="poppins font-semibold text-lg md:text-xl tracking-tight">
+            <h4
+              id={`course-title-${course.id}`}
+              className="poppins font-semibold text-lg md:text-xl tracking-tight"
+            >
               {course.title}
             </h4>
             <p className="text-xs">
@@ -38,9 +52,16 @@ const CourseCard = ({ course }: CourseCardProps) => {
           {/* Level & Learners */}
           <div className="flex flex-col lg:flex-row gap-4">
             <div className="rounded-3xl py-1.5 px-4 w-fit bg-lightest-gray flex items-center gap-2 text-dark-gray2 text-xs">
-              <Signal className="w-4" /> {course.level}
+              <Signal aria-hidden="true" className="w-4" />
+              <span>{course.level}</span>
             </div>
-            <img src={learners} alt="" className="w-26 md:w-30" />
+
+            <img
+              src={learners}
+              alt="26+ learners"
+              className="w-26 md:w-30"
+              loading="lazy"
+            />
           </div>
 
           {/* Price */}
@@ -53,14 +74,20 @@ const CourseCard = ({ course }: CourseCardProps) => {
         </div>
 
         {/* Rating */}
-        <div className="flex items-center gap-1 text-lg">
-          <span>{course.rating}</span>
+        <div
+          aria-label={`Rating: ${course.rating} out of 5`}
+          className="flex items-center gap-1 text-lg"
+        >
+          <span aria-hidden="true">{course.rating}</span>
           <span>
-            <Star className="w-4.5 fill-gray-border text-gray-border" />
+            <Star
+              aria-hidden="true"
+              className="w-4.5 fill-gray-border text-gray-border"
+            />
           </span>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

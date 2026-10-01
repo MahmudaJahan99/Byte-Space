@@ -4,10 +4,13 @@ import TopicCards from "./TopicCards";
 
 const ExploreCourses = () => {
   return (
-    <section className="page-section text-center">
+    <section
+      aria-labelledby="explore-courses-heading"
+      className="page-section text-center"
+    >
       {/* Section header */}
       <div>
-        <h2>
+        <h2 id="explore-courses-heading">
           Discover Your Passion,
           <br />
           Build Your Skills
@@ -26,10 +29,12 @@ const ExploreCourses = () => {
       {/* Courses */}
       <CourseCards />
 
-      <article>
+      <article aria-labelledby="learning-paths-heading">
         {/* Section header */}
         <div>
-          <h3>Explore Diverse Learning Paths at Bytespace</h3>
+          <h3 id="learning-paths-heading">
+            Explore Diverse Learning Paths at Bytespace
+          </h3>
 
           <p className="text-light-gray">
             At Bytespace, we believe in empowering individuals through

@@ -18,7 +18,7 @@ const Input = ({
 }: InputProps) => {
   return (
     <div className="relative flex-1 border border-gray-border rounded-full">
-      <label htmlFor="course-search" className="sr-only">
+      <label htmlFor={inputId} className="sr-only">
         {label}
       </label>
 

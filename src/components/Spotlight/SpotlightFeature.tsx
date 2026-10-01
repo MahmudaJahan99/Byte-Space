@@ -38,14 +38,16 @@ const SpotlightFeature = ({
 
           {/* Stats */}
           {stats && (
-            <dl className="flex gap-6 md:gap-14">
+            <dl
+              aria-label={`${title} statistics`}
+              className="flex gap-6 md:gap-14"
+            >
               {stats.map((stat) => (
                 <div key={stat.label} className="flex flex-col">
-                  <dt className="sr-only">{stat.label}</dt>
                   <dd className="text-electric-blue poppins font-medium text-4xl tracking-tight">
                     {stat.value}
                   </dd>
-                  <span aria-hidden="true">{stat.label}</span>
+                  <dt>{stat.label}</dt>
                 </div>
               ))}
             </dl>
@@ -53,16 +55,20 @@ const SpotlightFeature = ({
 
           {/* Checklist */}
           {checklist && (
-            <ul className="flex flex-col gap-4 text-black font-medium">
+            <ul
+              aria-label={`${title} benefits`}
+              className="flex flex-col gap-4 text-black font-medium"
+            >
               {checklist.map((item) => (
                 <li key={item} className="flex gap-2 text-lg">
                   <span
                     aria-hidden="true"
                     className="bg-electric-blue rounded-full w-6.5 h-6.5 flex items-center justify-center"
                   >
-                    <Check className="text-white" />
+                    <Check aria-hidden="true" className="text-white" />
                   </span>
-                  {item}
+
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>

@@ -16,13 +16,22 @@ const TestimonialCard = ({
       <div>
         <img
           src={image}
-          alt="user profile"
+          alt={`${name}'s profile`}
           className="rounded-full h-20 w-20"
+          loading="lazy"
+          decoding="async"
         />
-        <h6 className="mt-4">{name}</h6>
+
+        <h6 className="mt-4">
+          <cite className="not-italic">{name}</cite>
+        </h6>
+
         <p className=" text-electric-blue">{title}</p>
       </div>
-      <p className="text-dark-gray2">"{testimonial}"</p>
+
+      <blockquote className="text-dark-gray2">
+        <p>"{testimonial}"</p>
+      </blockquote>
     </div>
   );
 };

@@ -3,19 +3,22 @@ import type { FooterNavLink as FooterNavLinkType } from "../../data/footerNavLin
 
 interface FooterNavLinksProps {
   links: FooterNavLinkType[];
+  ariaLabel: string;
 }
 
-const FooterNavLinks = ({ links }: FooterNavLinksProps) => {
+const FooterNavLinks = ({ links, ariaLabel }: FooterNavLinksProps) => {
   return (
-    <ul className="grid gap-y-2">
-      {links.map((link) => (
-        <FooterNavLink
-          key={link.label}
-          linkTo={link.linkTo}
-          label={link.label}
-        />
-      ))}
-    </ul>
+    <nav aria-label={ariaLabel}>
+      <ul className="grid gap-y-2">
+        {links.map((link) => (
+          <FooterNavLink
+            key={link.label}
+            linkTo={link.linkTo}
+            label={link.label}
+          />
+        ))}
+      </ul>
+    </nav>
   );
 };
 
