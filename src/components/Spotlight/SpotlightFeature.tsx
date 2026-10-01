@@ -30,10 +30,11 @@ const SpotlightFeature = ({
     >
       <div className="text-lg text-shuttle-gray leading-[1.6] md:w-1/2">
         <div className="grid gap-4">
-          <h3 className="poppins font-semibold text-xl md:text-2xl lg:text-4xl leading-[1.2] tracking-tight">
-            {title}
-          </h3>
-          <p>{description}</p>
+          {/* Section header */}
+          <div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </div>
 
           {/* Stats */}
           {stats && (

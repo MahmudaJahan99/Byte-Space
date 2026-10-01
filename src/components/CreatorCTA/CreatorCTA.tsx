@@ -11,18 +11,22 @@ const CreatorCTA = () => {
       />
 
       {/* content */}
-      <div className="flex flex-col items-center max-w-11/12 md:max-w-3/4 m-auto gap-4 text-lightest-gray text-center my-8 relative z-10">
-        <h2 className="poppins font-semibold leading-[1.2] tracking-tight text-xl md:text-2xl lg:text-4xl">
-          Unlock Your Potential as a <br className="hidden md:flex" /> Creator
-          with ByteSpace
-        </h2>
-        <p className="text-lg">
-          Experience the collaboration of numerous creators and an expanding
-          selection of courses. Register now and become a part of a community
-          comprising over 10,000 local and international creators. Utilize our
-          Course Editor, and showcase your expertise by publishing your finest
-          course on the ByteSpace Course Library.
-        </p>
+      <div className="page-section flex flex-col items-center text-lightest-gray text-center xl:p-12 relative z-10">
+        {/* Section header */}
+        <div>
+          <h3>
+            Unlock Your Potential as a <br className="hidden md:flex" /> Creator
+            with ByteSpace
+          </h3>
+          <p className="text-lg">
+            Experience the collaboration of numerous creators and an expanding
+            selection of courses. Register now and become a part of a community
+            comprising over 10,000 local and international creators. Utilize our
+            Course Editor, and showcase your expertise by publishing your finest
+            course on the ByteSpace Course Library.
+          </p>
+        </div>
+
         <Button buttonName="Join as Creator" className="w-fit text-dark-gray" />
       </div>
     </article>

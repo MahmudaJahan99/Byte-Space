@@ -10,6 +10,53 @@
     --color-electric-lime: #CBFC01;
     --color-gray-white: #E5E6E8;
     --color-gray-border: #CED0D3;
+
+    --font-poppins: "Poppins", sans-serif;
+    --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+@layer base {
+    h1 {
+        @apply font-poppins font-semibold leading-[1.2] text-3xl md:text-5xl lg:text-7xl mb-6;
+    }
+
+    h2 {
+        @apply font-poppins font-semibold leading-[1.2] tracking-tight text-2xl md:text-4xl lg:text-6xl mb-6;
+    }
+
+    h3 {
+        @apply font-poppins font-semibold leading-[1.2] tracking-tight text-xl md:text-2xl lg:text-4xl mb-4;
+    }
+
+    h4 {
+        @apply font-poppins font-semibold tracking-tight text-lg md:text-xl mb-2;
+    }
+
+    h6 {
+        @apply font-poppins font-semibold leading-[1.2] tracking-tight text-xl;
+    }
+}
+
+@utility page-section {
+    width: 90%;
+    max-width: 90%;
+    margin-inline: auto;
+    padding-block: 2.5rem;
+    display: grid;
+    gap: 1rem;
+
+    @variant md {
+        max-width: 75%;
+    }
+
+    @variant lg {
+        max-width: calc(100vw - 200px);
+        gap: 2rem;
+    }
+
+    @variant xl {
+        max-width: 90%;
+    }
 }
 
 body {
@@ -17,6 +64,7 @@ body {
     color: #242528;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
+
 
 .poppins {
     font-family: "Poppins", sans-serif;

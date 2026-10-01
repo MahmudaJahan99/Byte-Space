@@ -26,9 +26,9 @@ const CourseCard = ({ course }: CourseCardProps) => {
         <div className="text-left flex flex-col gap-4">
           {/* Course & Creator name  */}
           <div>
-            <h3 className="poppins font-semibold text-lg md:text-xl tracking-tight">
+            <h4 className="poppins font-semibold text-lg md:text-xl tracking-tight">
               {course.title}
-            </h3>
+            </h4>
             <p className="text-xs">
               <span className="text-dark-gray2">by</span>{" "}
               <span className="text-electric-blue">{course.instructor}</span>

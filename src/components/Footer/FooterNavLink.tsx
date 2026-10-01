@@ -7,7 +7,7 @@ interface FooterNavLinkProps {
 
 const FooterNavLink = ({ linkTo, label }: FooterNavLinkProps) => {
   return (
-    <li>
+    <li className="hover:text-electric-blue transition duration-400">
       <Link to={linkTo}>{label}</Link>
     </li>
   );

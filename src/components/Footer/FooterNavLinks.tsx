@@ -7,7 +7,7 @@ interface FooterNavLinksProps {
 
 const FooterNavLinks = ({ links }: FooterNavLinksProps) => {
   return (
-    <ul>
+    <ul className="grid gap-y-2">
       {links.map((link) => (
         <FooterNavLink
           key={link.label}

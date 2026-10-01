@@ -31,7 +31,7 @@ const Spotlight = () => {
       <DecorativeCircle src={yellowMiddle} className="bottom-0 left-0 w-125" />
       <DecorativeCircle src={bluebottom} className="bottom-0 right-0 w-125" />
 
-      <div className="relative max-w-11/12 lg:max-w-[calc(100vw-200px) m-auto grid gap-4 lg:gap-8 pt-8 md:pt-16">
+      <div className="page-section relative pt-8 md:pt-16">
         <SpotlightFeature
           title="Your Path to Professional Growth Starts Here!"
           description="Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new career path entirely, we have the resources you need."

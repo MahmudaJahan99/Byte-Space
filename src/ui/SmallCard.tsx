@@ -8,7 +8,7 @@ interface SmallCardProps {
 const SmallCard = ({ title, children }: SmallCardProps) => {
   return (
     <div className="hidden lg:block card rounded-2xl bg-white p-2 md:p-4 w-fit">
-      <h6 className="font-medium text-dark-gray">{title}</h6>
+      <h6 className="font-medium">{title}</h6>
       {children}
     </div>
   );
