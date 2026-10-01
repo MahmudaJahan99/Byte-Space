@@ -1,6 +1,7 @@
 import BrandsCarousel from "../components/BrandsCarousel/BrandsCarousel";
 import CreatorCTA from "../components/CreatorCTA/CreatorCTA";
 import ExploreCourses from "../components/Explore/ExploreCourses";
+import Footer from "../components/Footer/Footer";
 import Hero from "../components/Hero/Hero";
 import Navbar from "../components/Navbar/Navbar";
 import Spotlight from "../components/Spotlight/Spotlight";
@@ -16,6 +17,7 @@ const Home = () => {
       <Spotlight />
       <CreatorCTA />
       <Testimonials />
+      <Footer />
     </>
   );
 };

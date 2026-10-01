@@ -17,7 +17,7 @@ const Input = ({
   inputPlaceholder,
 }: InputProps) => {
   return (
-    <div className="relative flex-1">
+    <div className="relative flex-1 border border-gray-border rounded-full">
       <label htmlFor="course-search" className="sr-only">
         {label}
       </label>
@@ -25,7 +25,7 @@ const Input = ({
       <Icon
         aria-hidden="true"
         size={20}
-        className="pointer-events-none absolute top-1/2 left-6 z-10 -translate-y-1/2 text-light-gray"
+        className="pointer-events-none absolute top-1/2 left-4 md:left-6 z-10 -translate-y-1/2 text-light-gray"
       />
 
       <input
@@ -33,7 +33,7 @@ const Input = ({
         name={inputName}
         id={inputId}
         placeholder={inputPlaceholder}
-        className="w-full rounded-full bg-white py-2 md:py-4 pr-4 pl-14 text-dark-gray outline-none placeholder:text-light-gray relative z-1"
+        className="w-full rounded-full bg-white py-2 md:py-4 pr-4 pl-10 md:pl-14 text-dark-gray outline-none placeholder:text-light-gray relative z-1"
       />
     </div>
   );
