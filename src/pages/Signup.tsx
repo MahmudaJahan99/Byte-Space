@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "../ui/Logo";
 import loginSignup from "../assets/login-signup.png";
-import Button from "../ui/Button";
-import { Link } from "react-router-dom";
+import AuthForm from "../components/AuthForm/AuthForm";
 
 const Signup = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,9 +35,14 @@ const Signup = () => {
 
       <main className="mx-auto grid min-h-screen max-w-7xl items-stretch px-4 pt-20 pb-10 md:grid-cols-2 md:gap-12 md:px-8">
         {/* Promotional content */}
-        <section className="hidden flex-col justify-center text-lightest-gray md:flex">
+        <section
+          aria-labelledby="signup-promo-title"
+          className="hidden flex-col justify-center text-lightest-gray md:flex"
+        >
           <div className="max-w-xl">
-            <h1 className="text-xl">Sign up and come in</h1>
+            <h1 id="signup-promo-title" className="text-xl">
+              Sign up and come in
+            </h1>
 
             <p>
               The registration process is straightforward, uncomplicated, and
@@ -56,112 +60,49 @@ const Signup = () => {
         </section>
 
         {/* Form */}
-        <section className="flex items-center">
-          <form
-            action=""
-            className="flex flex-col w-full rounded-3xl bg-white p-6 sm:p-8 md:p-10"
-          >
-            {/* form header */}
-            <div className="mb-4">
-              <h2 className="text-electric-blue text-lg font-normal mb-0">
-                Create an Account
-              </h2>
-              <h3>Wecome to ByteSpace</h3>
-            </div>
-
-            {/* Form fields */}
-            <div className="space-y-5">
-              {/* full name */}
-              <div className="flex flex-col gap-0.5">
-                <label
-                  htmlFor="full-name"
-                  className="text-sm font-medium leading-[1.2]"
-                >
-                  Full Name
-                </label>
-
-                <input
-                  type="text"
-                  name="full-name"
-                  id="full-name"
-                  placeholder="Jane Doe"
-                  className="h-13 w-full rounded-xl border border-gray-300 px-6 py-3 text-sm text-gray-900 outline-none transition focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20"
-                />
-              </div>
-
-              {/* email */}
-              <div className="flex flex-col gap-0.5">
-                <label
-                  htmlFor="email"
-                  className="text-sm font-medium leading-[1.2]"
-                >
-                  Email
-                </label>
-
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="jane@example.com"
-                  className="h-13 w-full rounded-xl border border-gray-300 px-6 py-3 text-sm text-gray-900 outline-none transition focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20"
-                />
-              </div>
-
-              {/* password */}
-              <div className="flex flex-col gap-0.5">
-                <label
-                  htmlFor="password"
-                  className="text-sm font-medium leading-[1.2]"
-                >
-                  Password
-                </label>
-
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="********"
-                  className="h-13 w-full rounded-xl border border-gray-300 px-6 py-3 text-sm text-gray-900 outline-none transition focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20"
-                />
-              </div>
-
-              {/* confirm password */}
-              <div className="flex flex-col gap-0.5">
-                <label
-                  htmlFor="cofirm-password"
-                  className="text-sm font-medium leading-[1.2]"
-                >
-                  Confirm Password
-                </label>
-
-                <input
-                  type="password"
-                  name="cofirm-password"
-                  id="cofirm-password"
-                  placeholder="********"
-                  className="h-13 w-full rounded-xl border border-gray-300 px-6 py-3 text-sm text-gray-900 outline-none transition focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20"
-                />
-              </div>
-            </div>
-
-            {/* Action buttons */}
-            <div className="mt-8 flex flex-col gap-5">
-              <div className="w-full lg:ml-auto lg:w-fit">
-                <Button
-                  buttonName="Continue"
-                  type="submit"
-                  className="w-full lg:w-fit"
-                />
-              </div>
-
-              <p className="text-center">
-                Already have an account?
-                <Link to="/login" className="text-electric-blue">
-                  Login
-                </Link>
-              </p>
-            </div>
-          </form>
+        <section aria-label="Create account form" className="flex items-center">
+          <AuthForm
+            title="Create an Account"
+            subtitle="Welcome to ByteSpace"
+            buttonName="Continue"
+            footerText="Already have an account?"
+            footerLinkText="Login"
+            footerLinkTo="/login"
+            fields={[
+              {
+                id: "full-name",
+                name: "full-name",
+                label: "Full Name",
+                type: "text",
+                placeholder: "Jane Doe",
+                autoComplete: "name",
+              },
+              {
+                id: "email",
+                name: "email",
+                label: "Email",
+                type: "email",
+                placeholder: "jane@example.com",
+                autoComplete: "email",
+              },
+              {
+                id: "password",
+                name: "password",
+                label: "Password",
+                type: "password",
+                placeholder: "********",
+                autoComplete: "new-password",
+              },
+              {
+                id: "confirm-password",
+                name: "confirm-password",
+                label: "Confirm Password",
+                type: "password",
+                placeholder: "********",
+                autoComplete: "new-password",
+              },
+            ]}
+          />
         </section>
       </main>
     </div>
