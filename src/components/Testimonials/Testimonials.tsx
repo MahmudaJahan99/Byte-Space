@@ -11,7 +11,7 @@ const Testimonials = () => {
       <div className={styles.yellowRightGlow} />
 
       {/* <section className="  text-center "> */}
-      <section className="relative z-10 max-w-11/12 lg:max-w-[calc(100vw-200px)] m-auto  py-10 grid gap-4 lg:gap-8">
+      <section className="relative z-10 max-w-11/12 lg:max-w-[calc(100vw-200px)] xl:max-w-11/12 m-auto  py-10 grid gap-4 lg:gap-8">
         <div className="flex flex-col md:flex-row md:items-end gap-4 mb-10">
           <h3 className="poppins font-semibold text-xl md:text-2xl lg:text-4xl leading-[1.2] md:w-1/2">
             Discover What Our <br className="hidden md:flex" /> Community Is

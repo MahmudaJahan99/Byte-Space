@@ -4,7 +4,7 @@ import TopicCards from "./TopicCards";
 
 const ExploreCourses = () => {
   return (
-    <section className="max-w-11/12 lg:max-w-[calc(100vw-200px)] m-auto text-center grid gap-4 lg:gap-8 py-10">
+    <section className="max-w-11/12 lg:max-w-[calc(100vw-200px)] xl:max-w-11/12 m-auto text-center grid gap-4 lg:gap-8 py-10">
       {/* Section head */}
       <h2 className="poppins font-semibold leading-[1.2] text-2xl md:text-4xl lg:text-6xl tracking-tight">
         Discover Your Passion,
