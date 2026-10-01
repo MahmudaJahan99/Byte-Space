@@ -86,7 +86,7 @@ const Navbar = () => {
       {/* Main Navbar */}
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:grid md:h-20 md:grid-cols-3 md:px-8">
         {/* Logo */}
-        <Logo />
+        <Logo imageSrc="/logo.png" />
 
         {/* Center Navigation */}
         <div
@@ -143,7 +143,7 @@ const Navbar = () => {
         >
           {/* Mobile Menu Header */}
           <div className="flex h-16 items-center justify-between px-4">
-            <Logo onClick={closeMenu} />
+            <Logo imageSrc="/logo.png" onClick={closeMenu} />
 
             <button
               ref={closeButtonRef}
