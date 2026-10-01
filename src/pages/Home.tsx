@@ -4,6 +4,7 @@ import ExploreCourses from "../components/Explore/ExploreCourses";
 import Hero from "../components/Hero/Hero";
 import Navbar from "../components/Navbar/Navbar";
 import Spotlight from "../components/Spotlight/Spotlight";
+import Testimonials from "../components/Testimonials/Testimonials";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <ExploreCourses />
       <Spotlight />
       <CreatorCTA />
+      <Testimonials />
     </>
   );
 };
