@@ -1,32 +1,24 @@
 import { courseCategories } from "../../data/courseCategories";
 import PillButton from "../../ui/PillButton";
+import ExpandablePillList from "./ExpandableCategoryPills";
+
+const SMALL_COUNT = 7;
+const MEDIUM_COUNT = 12;
 
 const CategoryPills = () => {
   return (
     <>
       {/* Small screens */}
-      <ul
-        aria-label="Course categories"
+      <ExpandablePillList
+        batchSize={SMALL_COUNT}
         className="flex md:hidden flex-wrap justify-center items-center gap-4"
-      >
-        {courseCategories.slice(0, 7).map((category) => (
-          <li key={category}>
-            <PillButton label={category} active={category === "Featured"} />
-          </li>
-        ))}
-      </ul>
+      />
 
       {/* Medium screens */}
-      <ul
-        aria-label="Course categories"
+      <ExpandablePillList
+        batchSize={MEDIUM_COUNT}
         className="hidden md:flex lg:hidden flex-wrap justify-center items-center gap-4"
-      >
-        {courseCategories.slice(0, 12).map((category) => (
-          <li key={category}>
-            <PillButton label={category} active={category === "Featured"} />
-          </li>
-        ))}
-      </ul>
+      />
 
       {/* Large screens */}
       <ul
@@ -35,10 +27,7 @@ const CategoryPills = () => {
       >
         {courseCategories.map((category) => (
           <li key={category}>
-            <PillButton
-              label={category}
-              active={category === "Featured"}
-            />
+            <PillButton label={category} active={category === "Featured"} />
           </li>
         ))}
       </ul>
