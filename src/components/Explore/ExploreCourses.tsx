@@ -1,5 +1,5 @@
-import CategoryPills from "./CategoryPills";
-import CourseCards from "./CourseCards";
+import CategoryPills from "../Courses/CategoryPills";
+import CourseCards from "../Courses/CourseCards";
 import TopicCards from "./TopicCards";
 
 const ExploreCourses = () => {
