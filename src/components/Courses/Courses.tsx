@@ -4,11 +4,13 @@ import CourseCards from "./CourseCards";
 const Courses = () => {
   return (
     <>
-      {/* Category pills */}
-      <CategoryPills />
+      <article className="page-section text-center pt-30">
+        {/* Category pills */}
+        <CategoryPills />
 
-      {/* Courses */}
-      <CourseCards />
+        {/* Courses */}
+        <CourseCards />
+      </article>
     </>
   );
 };

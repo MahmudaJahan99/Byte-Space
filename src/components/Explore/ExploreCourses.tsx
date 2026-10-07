@@ -27,7 +27,7 @@ const ExploreCourses = () => {
       <CategoryPills />
 
       {/* Courses */}
-      <CourseCards />
+      <CourseCards limit={6} />
 
       <article aria-labelledby="learning-paths-heading">
         {/* Section header */}
