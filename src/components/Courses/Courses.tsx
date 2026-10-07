@@ -9,7 +9,7 @@ const Courses = () => {
         <CategoryPills />
 
         {/* Courses */}
-        <CourseCards />
+        <CourseCards pageSize={12} />
       </article>
     </>
   );

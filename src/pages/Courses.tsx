@@ -1,11 +1,11 @@
-import CoursesComponent  from "../components/Courses/Courses";
+import CoursesComponent from "../components/Courses/Courses";
 
 const Courses = () => {
-    return (
-        <div>
-            <CoursesComponent />
-        </div>
-    );
+  return (
+    <>
+      <CoursesComponent />
+    </>
+  );
 };
 
 export default Courses;
