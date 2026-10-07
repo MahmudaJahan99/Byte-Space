@@ -26,9 +26,6 @@ const getPageRange = (
   return range;
 };
 
-const base =
-  "min-w-10 h-10 px-3 rounded-lg border text-sm font-medium transition-colors border-gray-border focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed";
-
 const Pagination = ({
   page,
   totalPages,
@@ -43,7 +40,7 @@ const Pagination = ({
       className="flex items-center justify-center gap-2 mt-10"
     >
       <button
-        className={`${base} disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100`}
+        className="min-w-10 h-10 px-3 rounded-lg border text-sm font-medium transition-colors border-gray-border focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100"
         onClick={() => onPageChange(page - 1)}
         disabled={page === 1}
         aria-label="Previous page"
@@ -59,7 +56,7 @@ const Pagination = ({
         ) : (
           <button
             key={item}
-            className={`${base} ${item === page ? "bg-gray-border" : "hover:bg-gray-100"}`}
+            className={`min-w-10 h-10 px-3 rounded-lg border text-sm font-medium transition-colors border-gray-border focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed ${item === page ? "bg-gray-border" : "hover:bg-gray-100"}`}
             onClick={() => onPageChange(item)}
             aria-current={item === page ? "page" : undefined}
             aria-label={`Page ${item}`}
@@ -70,7 +67,7 @@ const Pagination = ({
       )}
 
       <button
-        className={`${base} disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100`}
+        className="min-w-10 h-10 px-3 rounded-lg border text-sm font-medium transition-colors border-gray-border focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100"
         onClick={() => onPageChange(page + 1)}
         disabled={page === totalPages}
         aria-label="Next page"

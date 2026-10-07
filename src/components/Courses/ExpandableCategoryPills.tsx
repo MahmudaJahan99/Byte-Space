@@ -5,9 +5,16 @@ import PillButton from "../../ui/PillButton";
 interface PillListProps {
   batchSize: number;
   className: string;
+  activeCategory: string;
+  onCategoryClick: (category: string) => void;
 }
 
-const ExpandablePillList = ({ batchSize, className }: PillListProps) => {
+const ExpandablePillList = ({
+  batchSize,
+  className,
+  activeCategory,
+  onCategoryClick,
+}: PillListProps) => {
   const [visibleCount, setVisibleCount] = useState(batchSize);
 
   const total = courseCategories.length;
@@ -21,7 +28,11 @@ const ExpandablePillList = ({ batchSize, className }: PillListProps) => {
     <ul aria-label="Course categories" className={className}>
       {courseCategories.slice(0, visibleCount).map((category) => (
         <li key={category}>
-          <PillButton label={category} active={category === "Featured"} />
+          <PillButton
+            label={category}
+            active={category === activeCategory}
+            onClick={() => onCategoryClick(category)}
+          />
         </li>
       ))}
 
