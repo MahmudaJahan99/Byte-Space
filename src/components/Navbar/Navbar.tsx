@@ -17,18 +17,34 @@ const navLinksRight = [
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   // Blue glass background after the user scrolls
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 10);
-    onScroll();
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+
+    const onScroll = () => {
+      // Become glass while scrolling
+      setIsScrolling(true);
+
+      // Reset the timer every time another scroll event happens
+      clearTimeout(scrollTimeout);
+
+      // Once scrolling stops, return to solid blue
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 200);
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(scrollTimeout);
+    };
   }, []);
 
   // Lock page scroll while the mobile menu is open
@@ -77,10 +93,10 @@ const Navbar = () => {
   return (
     <nav
       aria-label="Primary navigation"
-      className={`fixed top-0 z-999 w-full transition-all duration-300 h-20 motion-reduce:transition-none ${
-        isScrolled
-          ? "border-b border-white/10 bg-electric-blue shadow-lg backdrop-blur-lg"
-          : "border-b border-transparent bg-transparent"
+      className={`fixed top-0 z-999 w-full h-20 transition-all duration-500 ease-in-out motion-reduce:transition-none ${
+        isScrolling
+          ? "border-b border-white/10 bg-electric-blue/75 shadow-md backdrop-blur-lg"
+          : "border-b border-transparent bg-electric-blue"
       }`}
     >
       {/* Main Navbar */}
