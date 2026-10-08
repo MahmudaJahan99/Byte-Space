@@ -11,7 +11,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
   return (
     <article
       aria-labelledby={`course-title-${course.id}`}
-      className="border border-gray-border rounded-3xl p-4"
+      className="h-full border border-gray-border rounded-3xl p-4 flex flex-col"
     >
       {/* Image */}
       <div className="relative mb-4">
@@ -33,7 +33,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
       </div>
 
       {/* Course Details */}
-      <div className="flex justify-between items-start">
+      <div className="flex justify-between items-start flex-1">
         <div className="text-left flex flex-col gap-4">
           {/* Course & Creator name  */}
           <div>

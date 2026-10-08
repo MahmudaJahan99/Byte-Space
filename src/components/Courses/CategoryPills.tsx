@@ -7,12 +7,13 @@ const SMALL_COUNT = 7;
 const MEDIUM_COUNT = 12;
 
 const CategoryPills = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
+  
   const [searchParams] = useSearchParams();
 
   const activeCategory = searchParams.get("category") || "Featured";
 
- const handleCategoryClick = (category: string) => {
+  const handleCategoryClick = (category: string) => {
     if (category === "Featured") {
       navigate("/courses");
       return;
@@ -46,8 +47,11 @@ const CategoryPills = () => {
       >
         {courseCategories.map((category) => (
           <li key={category}>
-            <PillButton label={category} active={category === activeCategory}
-              onClick={() => handleCategoryClick(category)} />
+            <PillButton
+              label={category}
+              active={category === activeCategory}
+              onClick={() => handleCategoryClick(category)}
+            />
           </li>
         ))}
       </ul>
