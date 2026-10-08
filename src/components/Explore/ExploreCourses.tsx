@@ -1,4 +1,3 @@
-import CategoryPills from "../Courses/CategoryPills";
 import CourseCards from "../Courses/CourseCards";
 import TopicCards from "./TopicCards";
 
@@ -22,9 +21,6 @@ const ExploreCourses = () => {
           to the arts, and make a difference in your career and life.
         </p>
       </div>
-
-      {/* Category pills */}
-      <CategoryPills />
 
       {/* Courses */}
       <CourseCards limit={6} />
