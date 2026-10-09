@@ -1,23 +1,16 @@
-import { courses } from "../../data/courseDetails";
+import type { Course } from "../../data/courseDetails";
 import { usePagination } from "../../hooks/usePagination";
 import Pagination from "../../ui/Pagination";
 import CourseCard from "./CourseCard";
 
 interface CourseCardsProps {
+  courses: Course[];
   limit?: number;
   pageSize?: number;
-  category?: string | null;
 }
 
-const CourseCards = ({ limit, pageSize, category }: CourseCardsProps) => {
-  const filteredCourses =
-    category && category !== "Featured"
-      ? courses.filter((course) => course.category === category)
-      : courses;
-
-  const source = limit
-    ? filteredCourses.slice(0, limit)
-    : filteredCourses;
+const CourseCards = ({ courses, limit, pageSize }: CourseCardsProps) => {
+  const source = limit ? courses.slice(0, limit) : courses;
 
   const { page, totalPages, pageItems, setPage } = usePagination(
     source,

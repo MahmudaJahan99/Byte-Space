@@ -1,3 +1,4 @@
+import { courses } from "../../data/courseDetails";
 import CourseCards from "../Courses/CourseCards";
 import TopicCards from "./TopicCards";
 
@@ -23,7 +24,7 @@ const ExploreCourses = () => {
       </div>
 
       {/* Courses */}
-      <CourseCards limit={6} />
+      <CourseCards courses={courses} limit={6} />
 
       <article aria-labelledby="learning-paths-heading">
         {/* Section header */}

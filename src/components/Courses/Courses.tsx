@@ -1,44 +1,49 @@
-import { Search } from "lucide-react";
 import Input from "../../ui/Input";
 import CategoryPills from "./CategoryPills";
 import CourseCards from "./CourseCards";
 import Button from "../../ui/Button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useState } from "react";
-import { courses } from "../../data/courseDetails";
+import { courses, type Course } from "../../data/courseDetails";
+import { filterAndSortCourses } from "../../utils/courseFilters";
+import useCourseSearch from "../../hooks/useCourseSearch";
+import ActiveFilterChips from "./ActiveFilterChips";
+import CourseFilters from "./CourseFilters";
+import type { SortOption } from "../../utils/courseFilters";
+import { Search } from "lucide-react";
 
-interface CoursesProps {
-  category: string | null;
-}
+const Courses = () => {
+  const [searchParams] = useSearchParams();
 
-const Courses = ({ category }: CoursesProps) => {
+  const category = searchParams.get("category");
+
   const navigate = useNavigate();
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const {
+    searchQuery,
+    setSearchQuery,
+    filteredCourses,
+    handleSearch,
+    handleCourseSelect,
+  } = useCourseSearch();
 
-  const filteredCourses =
-    searchQuery.trim().length > 0
-      ? courses.filter((course) =>
-          course.title.toLowerCase().includes(searchQuery.toLowerCase()),
-        )
-      : [];
+  const [sortOption, setSortOption] = useState<SortOption>(null);
 
-  const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const [selectedLevel, setSelectedLevel] = useState<Course["level"] | null>(
+    null,
+  );
 
-    if (filteredCourses.length > 0) {
-      navigate("/course");
-    }
-  };
-
-  const handleCourseSelect = () => {
-    navigate("/course");
-  };
+  const filteredAndSortedCourses = filterAndSortCourses({
+    courses,
+    selectedLevel,
+    category,
+    sortOption,
+  });
 
   return (
     <>
       <article aria-labelledby="courses-heading" className="text-center">
-        {/* Course Search */}
+        {/* Course Header */}
         <header className="bg-electric-blue pt-20">
           <div className="page-section">
             <h2 id="courses-heading" className="text-white">
@@ -98,15 +103,32 @@ const Courses = ({ category }: CoursesProps) => {
         </header>
 
         <div className="page-section">
+          <CourseFilters
+            selectedLevel={selectedLevel}
+            sortOption={sortOption}
+            onLevelChange={setSelectedLevel}
+            onSortChange={setSortOption}
+          />
+
+          <ActiveFilterChips
+            category={category}
+            selectedLevel={selectedLevel}
+            sortOption={sortOption}
+            onRemoveCategory={() => navigate("/courses")}
+            onRemoveLevel={() => setSelectedLevel(null)}
+            onRemoveSort={() => setSortOption(null)}
+            onClearAll={() => {
+              navigate("/courses");
+              setSelectedLevel(null);
+              setSortOption(null);
+            }}
+          />
+
           {/* Category pills */}
           <CategoryPills />
 
           {/* Courses */}
-          <CourseCards
-            key={category ?? "Featured"}
-            pageSize={12}
-            category={category}
-          />
+          <CourseCards courses={filteredAndSortedCourses} pageSize={12} />
         </div>
       </article>
     </>
