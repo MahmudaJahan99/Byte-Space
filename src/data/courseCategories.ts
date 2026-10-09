@@ -17,4 +17,6 @@ export const courseCategories = [
   "Web Development",
   "Data Science",
   "Cooking",
-];
+] as const;
+
+export type CourseCategory = (typeof courseCategories)[number];

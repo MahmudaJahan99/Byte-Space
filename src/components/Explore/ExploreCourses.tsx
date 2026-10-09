@@ -1,5 +1,5 @@
-import CategoryPills from "./CategoryPills";
-import CourseCards from "./CourseCards";
+import { courses } from "../../data/courseDetails";
+import CourseCards from "../Courses/CourseCards";
 import TopicCards from "./TopicCards";
 
 const ExploreCourses = () => {
@@ -23,11 +23,8 @@ const ExploreCourses = () => {
         </p>
       </div>
 
-      {/* Category pills */}
-      <CategoryPills />
-
       {/* Courses */}
-      <CourseCards />
+      <CourseCards courses={courses} limit={6} />
 
       <article aria-labelledby="learning-paths-heading">
         {/* Section header */}
