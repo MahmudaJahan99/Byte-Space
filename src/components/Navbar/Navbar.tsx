@@ -75,7 +75,7 @@ const Navbar = () => {
   return (
     <nav
       aria-label="Primary navigation"
-      className={`fixed top-0 z-999 w-full h-20 transition-all duration-500 ease-in-out motion-reduce:transition-none ${
+      className={`fixed top-0 z-999 w-full h-17 md:h-20 transition-all duration-500 ease-in-out motion-reduce:transition-none ${
         isScrolling
           ? "border-b border-white/10 bg-electric-blue/75 shadow-md backdrop-blur-lg"
           : "border-b border-transparent bg-electric-blue"
