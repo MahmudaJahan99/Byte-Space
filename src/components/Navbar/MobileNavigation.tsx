@@ -28,8 +28,10 @@ const MobileNavigation = ({
         >
           {/* Mobile Menu Header */}
           <div className="flex h-16 items-center justify-between px-4">
+            {/* logo */}
             <Logo imageSrc="/logo.png" onClick={onClose} />
 
+            {/* close menu button */}
             <button
               ref={closeButtonRef}
               type="button"
