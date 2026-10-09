@@ -17,6 +17,8 @@ const Login = () => {
 
   return (
     <div className="min-h-screen w-full bg-electric-blue">
+      <title>ByteSpace | Login</title>
+
       {/* Top Nav */}
       <nav
         aria-label="Primary navigation"

@@ -8,6 +8,8 @@ import Testimonials from "../components/Testimonials/Testimonials";
 const Home = () => {
   return (
     <>
+      <title>ByteSpace | Home</title>
+
       <Hero />
       <BrandsCarousel />
       <ExploreCourses />

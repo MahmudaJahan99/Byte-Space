@@ -1,7 +1,13 @@
 import CoursesComponent from "../components/Courses/Courses";
 
 const Courses = () => {
-  return <CoursesComponent />;
+  return (
+    <>
+      <title>ByteSpace | Courses</title>
+      
+      <CoursesComponent />;
+    </>
+  );
 };
 
 export default Courses;
