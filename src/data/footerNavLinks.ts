@@ -71,3 +71,18 @@ export const creatorLinks: FooterNavLink[] = [
     linkTo: "/",
   },
 ];
+
+export const policyAndTerms: FooterNavLink[] = [
+  {
+    label: "Privacy Policy",
+    linkTo: "/",
+  },
+  {
+    label: "Terms of Service",
+    linkTo: "/",
+  },
+  {
+    label: " Cookies Settings",
+    linkTo: "/",
+  },
+];

@@ -9,6 +9,7 @@ interface InputProps {
   inputPlaceholder: string;
   value?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
 }
 
 const Input = ({
@@ -20,6 +21,7 @@ const Input = ({
   inputPlaceholder,
   value,
   onChange,
+  required = false
 }: InputProps) => {
   return (
     <div className="relative flex-1 border border-gray-border rounded-full">
@@ -40,6 +42,7 @@ const Input = ({
         placeholder={inputPlaceholder}
         value={value}
         onChange={onChange}
+        required={required}
         className="w-full rounded-full bg-white py-2 md:py-4 pr-4 pl-10 md:pl-14 text-dark-gray outline-none placeholder:text-light-gray relative z-1"
       />
     </div>

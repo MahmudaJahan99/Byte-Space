@@ -4,12 +4,13 @@ import type { FooterNavLink as FooterNavLinkType } from "../../data/footerNavLin
 interface FooterNavLinksProps {
   links: FooterNavLinkType[];
   ariaLabel: string;
+  className?: string;
 }
 
-const FooterNavLinks = ({ links, ariaLabel }: FooterNavLinksProps) => {
+const FooterNavLinks = ({ links, ariaLabel, className = "grid gap-y-2", }: FooterNavLinksProps) => {
   return (
     <nav aria-label={ariaLabel}>
-      <ul className="grid gap-y-2">
+      <ul className={className}>
         {links.map((link) => (
           <FooterNavLink
             key={link.label}

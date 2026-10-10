@@ -2,12 +2,12 @@ import { Mail } from "lucide-react";
 import Logo from "../../ui/Logo";
 import Input from "../../ui/Input";
 import Button from "../../ui/Button";
-import { Link } from "react-router-dom";
 import FooterNavLinks from "./FooterNavLinks";
 import {
   categoryLinks,
   creatorLinks,
   featuredLinks,
+  policyAndTerms,
 } from "../../data/footerNavLinks";
 
 const Footer = () => {
@@ -15,6 +15,7 @@ const Footer = () => {
     event.preventDefault();
     // Email logic will go here.
   };
+
   return (
     <>
       <footer className="page-section pb-4 text-sm">
@@ -22,6 +23,7 @@ const Footer = () => {
         <div className="grid gap-4 md:gap-8 lg:grid-cols-2 items-center">
           {/* Left section */}
           <div className="grid gap-4">
+            {/* Logo */}
             <Logo imageSrc="/logo2.png" />
 
             <p id="newsletter-description">
@@ -29,8 +31,8 @@ const Footer = () => {
               our newsletter.
             </p>
 
+            {/* Email to send newsletter */}
             <form
-              role="subscribe"
               aria-describedby="newsletter-description"
               onSubmit={handleEmail}
               className="relative mt-4 md:mt-6 max-w-xl flex gap-4 md:gap-6 text-sm md:text-[18px] xl:w-3xl"
@@ -42,6 +44,7 @@ const Footer = () => {
                 inputName="user-email"
                 inputId="user-email"
                 inputPlaceholder="Enter your email"
+                required
               />
               <Button buttonName="Subscribe" type="submit" />
             </form>
@@ -78,31 +81,14 @@ const Footer = () => {
         <div className="flex flex-col-reverse md:flex-row gap-4 items-center justify-between">
           <p>@ 2023 ByteSpace. All rights reserved.</p>
 
-          <nav aria-label="Legal">
-            <ul className="flex gap-4">
-              <li>
-                <Link
-                  to="/"
-                  className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-blue"
-                />
-                Privacy Policy
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-blue"
-                />
-                Terms of Service
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-blue"
-                />
-                Cookies Settings
-              </li>
-            </ul>
-          </nav>
+          {/* bottom nav */}
+          <div aria-label="Legal">
+            <FooterNavLinks
+              links={policyAndTerms}
+              ariaLabel="Policy and Terms"
+              className="flex gap-4"
+            />
+          </div>
         </div>
       </footer>
     </>
