@@ -1,5 +1,6 @@
 import type { RefObject } from "react";
 import { Menu } from "lucide-react";
+import styles from "./Navbar.module.css";
 
 interface MobileMenuButtonProps {
   isMenuOpen: boolean;
@@ -20,9 +21,9 @@ const MobileMenuButton = ({
       aria-label="Open navigation menu"
       aria-expanded={isMenuOpen}
       aria-controls="mobile-navigation"
-      className="p-2 text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white md:hidden"
+      className={`${styles.iconButton} ${styles.hamburgerMenu}`}
     >
-      <Menu className="h-7 w-7" aria-hidden="true" />{" "}
+      <Menu className="h-7 w-7 cursor-pointer" aria-hidden="true" />
     </button>
   );
 };

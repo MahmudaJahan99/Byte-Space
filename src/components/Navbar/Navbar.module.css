@@ -1,0 +1,111 @@
+/* Shared interactive styles */
+.navLink,
+.iconButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    color: rgb(255 255 255 / 90%);
+    transition:
+        background-color 200ms ease,
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+.navLink {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.authLink {
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    color: rgb(255 255 255 / 90%);
+    transition:
+        background-color 200ms ease,
+        color 200ms ease,
+        transform 200ms ease;
+}
+
+.iconButton {
+    padding: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hover */
+.navLink:hover,
+.iconButton:hover {
+    color: white;
+}
+
+/* Press / click */
+.navLink:active {
+    transform: scale(0.96);
+    background-color: rgb(255 255 255 / 20%);
+}
+
+.iconButton:active {
+    transform: scale(0.9);
+    background-color: rgb(255 255 255 / 20%);
+}
+
+/* Icons respond with their parent */
+.icon {
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+}
+
+/* Active route */
+.activeLink {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+/* Keyboard accessibility */
+.navLink:focus-visible,
+.iconButton:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+/* Mobile nav items */
+.mobileLink {
+    width: 50%;
+    justify-content: flex-start;
+    font-size: 1.125rem;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .navLink,
+    .iconButton,
+    .icon {
+        transition: none;
+    }
+
+    .navLink:active,
+    .iconButton:active,
+    .navLink:active .icon,
+    .iconButton:active .icon {
+        transform: none;
+    }
+}
+
+/* Hide hamburger menu on desktop screens */
+@media (min-width: 768px) {
+    .hamburgerMenu {
+        display: none;
+    }
+}

@@ -12,18 +12,13 @@ const Navbar = () => {
   // Blue glass background after the user scrolls
   useEffect(() => {
     let scrollTimeout: ReturnType<typeof setTimeout>;
-    let isCurrentlyScrolling = false;
 
     const onScroll = () => {
-      if (!isCurrentlyScrolling) {
-        isCurrentlyScrolling = true;
-        setIsScrolling(true);
-      }
+      setIsScrolling(true);
 
       clearTimeout(scrollTimeout);
 
       scrollTimeout = setTimeout(() => {
-        isCurrentlyScrolling = false;
         setIsScrolling(false);
       }, 200);
     };
@@ -41,17 +36,35 @@ const Navbar = () => {
     if (!isMenuOpen) return;
 
     const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    const currentPaddingRight = window.getComputedStyle(
+      document.body,
+    ).paddingRight;
+
     document.body.style.overflow = "hidden";
+
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `calc(${currentPaddingRight} + ${scrollbarWidth}px)`;
+    }
 
     closeButtonRef.current?.focus();
 
     return () => {
       document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
     };
   }, [isMenuOpen]);
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
+  }, []);
+
+  // Restore focus only after the drawer has exited.
+  const handleExitComplete = useCallback(() => {
     menuButtonRef.current?.focus();
   }, []);
 
@@ -93,6 +106,7 @@ const Navbar = () => {
         isMenuOpen={isMenuOpen}
         onClose={closeMenu}
         closeButtonRef={closeButtonRef}
+        onExitComplete={handleExitComplete}
       />
     </nav>
   );

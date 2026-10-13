@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { navLinksCenter, navLinksRight } from "./navigationLinks";
 import Logo from "../../ui/Logo";
 import MobileMenuButton from "./MobileMenuButton";
+import styles from "./Navbar.module.css";
 
 interface DesktopNavigationProps {
   isMenuOpen: boolean;
@@ -29,11 +30,7 @@ const DesktopNavigation = ({
             key={link.to}
             to={link.to}
             className={({ isActive }) =>
-              `text-sm font-medium transition ${
-                isActive
-                  ? "text-white underline underline-offset-8"
-                  : "text-white/90 hover:text-white"
-              } focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white`
+              `${styles.navLink} ${isActive ? styles.activeLink : ""}`
             }
           >
             {link.label}
@@ -48,7 +45,7 @@ const DesktopNavigation = ({
             key={to}
             to={to}
             aria-label={to === "/cart" ? label : undefined}
-            className="inline-flex items-center gap-2 text-sm font-medium text-white/90 transition hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+            className={styles.authLink}
           >
             {Icon && <Icon className="h-6 w-6" aria-hidden="true" />}
             {to !== "/cart" && label}
