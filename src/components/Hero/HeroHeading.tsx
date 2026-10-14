@@ -4,10 +4,11 @@ const HeroHeading = () => {
       {/* Section header */}
       <div>
         <h1 id="hero-heading" className="text-white">
-          Get Access to Hundreds Courses Available
+          Get Access to Hundreds <br className="hidden md:flex" /> of Available
+          Courses
         </h1>
 
-        <p className="text-gray-white">
+        <p className="text-gray-white w-3/4 m-auto">
           Unlock your creativity, gain valuable knowledge, and grow your
           business with our wide range of courses.
         </p>
