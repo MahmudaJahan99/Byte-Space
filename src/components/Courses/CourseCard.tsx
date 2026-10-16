@@ -13,7 +13,8 @@ const CourseCard = ({ course }: CourseCardProps) => {
     <Link
       to="/course"
       aria-labelledby={`course-title-${course.id}`}
-      className="group h-full border border-gray-border rounded-3xl p-4 flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover/50 hover motion-reduce motion-reduce:hover cursor-pointer"
+      className="group h-full border border-gray-border rounded-3xl p-4 flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover/50 hover motion-reduce motion-reduce:hover cursor-pointer
+      focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric-blue"
     >
       {/* Image */}
       <div className="relative mb-4 overflow-hidden rounded-2xl">
