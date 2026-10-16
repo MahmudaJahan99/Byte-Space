@@ -128,7 +128,31 @@ const Courses = () => {
           {!category && <CategoryPills />}
 
           {/* Courses */}
-          <CourseCards courses={filteredAndSortedCourses} pageSize={12} />
+          {filteredAndSortedCourses.length > 0 ? (
+            <CourseCards courses={filteredAndSortedCourses} pageSize={12} />
+          ) : (
+            <div
+              role="status"
+              className="flex flex-col gap-4 items-center justify-center py-16 px-6"
+            >
+              <h3 className="text-xl font-semibold">No courses found</h3>
+
+              <p className="max-w-xl text-light-gray mb-5">
+                We couldn't find any courses matching your current filters. Try
+                changing your category or adjusting your filters.
+              </p>
+
+              <Button
+                buttonName="Clear filters"
+                onClick={() => {
+                  navigate("/courses");
+                  setSelectedLevel(null);
+                  setSortOption(null);
+                  setSearchQuery("");
+                }}
+              />
+            </div>
+          )}
         </div>
       </article>
     </>
