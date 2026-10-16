@@ -39,6 +39,7 @@ const Pagination = ({
       aria-label="Pagination"
       className="flex items-center justify-center gap-2 mt-10"
     >
+      {/* Left button */}
       <button
         className="min-w-10 h-10 px-3 rounded-lg border text-sm font-medium transition-colors border-gray-border focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100"
         onClick={() => onPageChange(page - 1)}
@@ -48,6 +49,7 @@ const Pagination = ({
         <ChevronLeft />
       </button>
 
+      {/* Page numbers */}
       {getPageRange(page, totalPages, siblings).map((item) =>
         typeof item === "string" ? (
           <span key={item} className="px-1" aria-hidden="true">
@@ -66,6 +68,7 @@ const Pagination = ({
         ),
       )}
 
+      {/* Right button */}
       <button
         className="min-w-10 h-10 px-3 rounded-lg border text-sm font-medium transition-colors border-gray-border focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-gray-100"
         onClick={() => onPageChange(page + 1)}

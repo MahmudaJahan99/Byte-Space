@@ -125,7 +125,7 @@ const Courses = () => {
           />
 
           {/* Category pills */}
-          <CategoryPills />
+          {!category && <CategoryPills />}
 
           {/* Courses */}
           <CourseCards courses={filteredAndSortedCourses} pageSize={12} />
