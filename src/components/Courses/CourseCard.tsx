@@ -72,7 +72,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
             <span>{course.level}</span>
           </div>
 
-          <StudentsImageStack comments={course.comments} />
+          <StudentsImageStack comments={course.comments} courseId={course.id} />
         </div>
 
         {/* Price */}
