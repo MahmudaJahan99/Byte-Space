@@ -63,7 +63,9 @@ const HappyStudentsCard = () => {
           className="h-10.75 w-10.75 rounded-full -ml-4"
         />
         <div className="bg-electric-lime flex items-center justify-center h-10.75 w-10.75 rounded-full -ml-4 text-sm font-semibold">
-          <span>2K+</span>
+          <span aria-hidden="true" className="flex items-center">
+            2K <span className="-mt-0.75">+</span>
+          </span>
         </div>
       </div>
     </SmallCard>

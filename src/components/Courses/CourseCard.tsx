@@ -1,7 +1,8 @@
 import { Signal, Star } from "lucide-react";
 import GlassBadge from "../../ui/GlassBadge";
-import learners from "../../assets/course-learners.png";
 import type { Course } from "../../data/courseDetails";
+import { Link } from "react-router-dom";
+import StudentsImageStack from "./StudentsImageStack";
 
 interface CourseCardProps {
   course: Course;
@@ -9,17 +10,18 @@ interface CourseCardProps {
 
 const CourseCard = ({ course }: CourseCardProps) => {
   return (
-    <article
+    <Link
+      to="/course"
       aria-labelledby={`course-title-${course.id}`}
-      className="h-full border border-gray-border rounded-3xl p-4 flex flex-col"
+      className="group h-full border border-gray-border rounded-3xl p-4 flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover/50 hover motion-reduce motion-reduce:hover cursor-pointer"
     >
       {/* Image */}
-      <div className="relative mb-4">
+      <div className="relative mb-4 overflow-hidden rounded-2xl">
         <img
           src={course.image}
           alt={course.title}
           loading="lazy"
-          className="rounded-2xl"
+          className="w-full transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
         />
 
         <div
@@ -28,13 +30,12 @@ const CourseCard = ({ course }: CourseCardProps) => {
         >
           <GlassBadge info={`${course.lessons} Lessons`} />
           <GlassBadge info={course.duration} />
-          <GlassBadge info={`${course.comments} Comments`} />
         </div>
       </div>
 
       {/* Course Details */}
-      <div className="flex justify-between items-start flex-1">
-        <div className="text-left flex flex-col gap-4">
+      <div className="text-left flex flex-col flex-1 space-y-4">
+        <div className="flex items-start justify-between gap-4">
           {/* Course & Creator name  */}
           <div>
             <h4
@@ -49,45 +50,40 @@ const CourseCard = ({ course }: CourseCardProps) => {
             </p>
           </div>
 
-          {/* Level & Learners */}
-          <div className="flex flex-col lg:flex-row gap-4">
-            <div className="rounded-3xl py-1.5 px-4 w-fit bg-lightest-gray flex items-center gap-2 text-dark-gray2 text-xs">
-              <Signal aria-hidden="true" className="w-4" />
-              <span>{course.level}</span>
-            </div>
+          {/* Rating */}
+          <div
+            aria-label={`Rating: ${course.rating} out of 5`}
+            className="flex items-center gap-1 text-lg"
+          >
+            <span aria-hidden="true">{course.rating}</span>
+            <span>
+              <Star
+                aria-hidden="true"
+                className="w-4.5 fill-gray-border text-gray-border"
+              />
+            </span>
+          </div>
+        </div>
 
-            <img
-              src={learners}
-              alt="26+ learners"
-              className="w-26 md:w-30"
-              loading="lazy"
-            />
+        {/* Level & Learners */}
+        <div className="flex flex-col xl:flex-row gap-4 justify-between">
+          <div className="rounded-3xl py-1.5 px-4 w-fit bg-lightest-gray flex items-center gap-2 text-dark-gray2 text-xs">
+            <Signal aria-hidden="true" className="w-4" />
+            <span>{course.level}</span>
           </div>
 
-          {/* Price */}
-          <p className="text-dark-gray2 text-xs">
-            <span className="text-electric-blue font-semibold text-xl poppins">
-              ${course.price}
-            </span>
-            /lifetime
-          </p>
+          <StudentsImageStack comments={course.comments} />
         </div>
 
-        {/* Rating */}
-        <div
-          aria-label={`Rating: ${course.rating} out of 5`}
-          className="flex items-center gap-1 text-lg"
-        >
-          <span aria-hidden="true">{course.rating}</span>
-          <span>
-            <Star
-              aria-hidden="true"
-              className="w-4.5 fill-gray-border text-gray-border"
-            />
+        {/* Price */}
+        <p className="text-dark-gray2 text-xs mt-auto">
+          <span className="text-electric-blue font-semibold text-xl poppins">
+            ${course.price}
           </span>
-        </div>
+          /lifetime
+        </p>
       </div>
-    </article>
+    </Link>
   );
 };
 
