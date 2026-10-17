@@ -1,21 +1,17 @@
-import ornament from "../../assets/3d ornament 2.png";
 import Button from "../../ui/Button";
+import Decorations from "./Decorations";
 
 const CreatorCTA = () => {
   return (
     <article
       aria-labelledby="creator-cta-heading"
-      className="bg-electric-blue overflow-hidden relative py-10"
+      className="bg-electric-blue relative isolate overflow-hidden"
     >
-      <img
-        src={ornament}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none hidden md:block absolute inset-0 z-0 h-full w-full object-cover"
-      />
+      {/* Decorations */}
+      <Decorations />
 
       {/* content */}
-      <div className="page-section flex flex-col items-center text-lightest-gray text-center xl:p-12 relative z-10">
+      <div className="page-section flex flex-col items-center text-lightest-gray text-center xl:p-12 relative z-10 my-10">
         {/* Section header */}
         <div>
           <h3 id="creator-cta-heading">
