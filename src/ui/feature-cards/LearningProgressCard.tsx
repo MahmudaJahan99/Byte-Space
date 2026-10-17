@@ -5,7 +5,7 @@ const LearningProgressCard = () => {
     <SmallCard title="Learning Progress">
       <p
         id="learning-progress-value"
-        className="poppins font-semibold md:text-3xl lg:text-5xl"
+        className="poppins font-semibold md:text-xl lg:text-3xl"
       >
         55%
       </p>

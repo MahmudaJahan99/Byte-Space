@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import type { ReactNode } from "react";
 
 interface Stat {
   value: string;
@@ -8,8 +9,7 @@ interface Stat {
 interface ContentFeatureProps {
   title: string;
   description: string;
-  image: string;
-  imageAlt: string;
+  visual: ReactNode;
   stats?: Stat[];
   checklist?: string[];
   reverse?: boolean;
@@ -18,8 +18,7 @@ interface ContentFeatureProps {
 const SpotlightFeature = ({
   title,
   description,
-  image,
-  imageAlt,
+  visual,
   stats,
   checklist,
   reverse = false,
@@ -28,7 +27,7 @@ const SpotlightFeature = ({
     <article
       className={`flex flex-col items-center justify-center gap-8 ${reverse ? "md:flex-row-reverse" : " md:flex-row "}`}
     >
-      <div className="text-lg text-shuttle-gray leading-[1.6] md:w-1/2">
+      <div className="text-lg text-shuttle-gray leading-[1.6] md:flex-1 md:min-w-0">
         <div className="grid gap-4">
           {/* Section header */}
           <div>
@@ -40,11 +39,11 @@ const SpotlightFeature = ({
           {stats && (
             <dl
               aria-label={`${title} statistics`}
-              className="flex gap-6 md:gap-14"
+              className="flex flex-wrap gap-4 md:gap-6 lg:gap-14"
             >
               {stats.map((stat) => (
                 <div key={stat.label} className="flex flex-col">
-                  <dd className="text-electric-blue poppins font-medium text-4xl tracking-tight">
+                  <dd className="text-electric-blue poppins font-medium text-2xl md:text-3xl lg:text-4xl tracking-tight">
                     {stat.value}
                   </dd>
                   <dt>{stat.label}</dt>
@@ -77,9 +76,7 @@ const SpotlightFeature = ({
       </div>
 
       {/* Image */}
-      <div className="md:w-1/2">
-        <img src={image} alt={imageAlt} />
-      </div>
+      <div className="w-full md:flex-1 md:min-w-0">{visual}</div>
     </article>
   );
 };

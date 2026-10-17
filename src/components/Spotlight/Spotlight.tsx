@@ -3,10 +3,11 @@ import blueTop from "../../assets/blue-top.png";
 import blueMiddle from "../../assets/blue-middle.png";
 import yellowMiddle from "../../assets/yellow-middle.png";
 import bluebottom from "../../assets/blue-bottom.png";
-import Frame1 from "../../assets/Frame1.png";
-import Frame2 from "../../assets/Frame2.png";
+
 import DecorativeCircle from "../../ui/DecorativeCircle";
 import SpotlightFeature from "./SpotlightFeature";
+import TopSectionDecoration from "./TopSectionDecoration";
+import BottomSectionDecoration from "./BottomSectionDecoration";
 
 const learningStats = [
   { value: "12K", label: "Students" },
@@ -48,16 +49,14 @@ const Spotlight = () => {
         <SpotlightFeature
           title="Your Path to Professional Growth Starts Here!"
           description="Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new career path entirely, we have the resources you need."
-          image={Frame1}
-          imageAlt="Illustration representing professional learning and career growth"
+          visual={<TopSectionDecoration />}
           stats={learningStats}
         />
 
         <SpotlightFeature
           title="Create & Manage Courses Easily"
           description="ByteSpace supports individuals or entities in the creation, publication, and administration of educational courses."
-          image={Frame2}
-          imageAlt="Illustration representing course creation and management"
+          visual={<BottomSectionDecoration />}
           checklist={creatorBenefits}
           reverse
         />
