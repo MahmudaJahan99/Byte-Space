@@ -13,7 +13,8 @@
         transform 200ms ease;
 }
 
-.navLink {
+.navLink,
+.authLink {
     padding: 0.5rem;
     font-size: 0.875rem;
     font-weight: 500;
@@ -74,7 +75,8 @@
 
 /* Keyboard accessibility */
 .navLink:focus-visible,
-.iconButton:focus-visible {
+.iconButton:focus-visible,
+.authLink:focus-visible {
     outline: 2px solid white;
     outline-offset: 3px;
 }
