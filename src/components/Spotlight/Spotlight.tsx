@@ -1,13 +1,7 @@
-import yellowTop from "../../assets/yellow-top.png";
-import blueTop from "../../assets/blue-top.png";
-import blueMiddle from "../../assets/blue-middle.png";
-import yellowMiddle from "../../assets/yellow-middle.png";
-import bluebottom from "../../assets/blue-bottom.png";
-
-import DecorativeCircle from "../../ui/DecorativeCircle";
 import SpotlightFeature from "./SpotlightFeature";
 import TopSectionDecoration from "./TopSectionDecoration";
 import BottomSectionDecoration from "./BottomSectionDecoration";
+import styles from "./Spotlight.module.css";
 
 const learningStats = [
   { value: "12K", label: "Students" },
@@ -28,17 +22,12 @@ const Spotlight = () => {
       aria-labelledby="spotlight-heading"
       className="relative overflow-hidden bg-[#F6F6F699] py-10"
     >
-      {/* Decorative Circles */}
-      <div aria-hidden="true">
-        <DecorativeCircle src={yellowTop} className="top-0 left-[5%] w-125" />
-        <DecorativeCircle src={blueTop} className="top-0 right-0 w-125" />
-        <DecorativeCircle src={blueMiddle} className="top-[25%] left-0 w-125" />
-        <DecorativeCircle
-          src={yellowMiddle}
-          className="bottom-0 left-0 w-125"
-        />
-        <DecorativeCircle src={bluebottom} className="bottom-0 right-0 w-125" />
-      </div>
+      {/*  Decorative background radial gradients */}
+      <div className={styles.yellowTopGlow} aria-hidden="true" />
+      <div className={styles.blueTopGlow} aria-hidden="true" />
+      <div className={styles.blueMiddleGlow} aria-hidden="true" />
+      <div className={styles.yellowMiddleGlow} aria-hidden="true" />
+      <div className={styles.blueBottomGlow} aria-hidden="true" />
 
       <div className="page-section relative pt-8 md:pt-16">
         {/* Section heading for screen-reader users */}
