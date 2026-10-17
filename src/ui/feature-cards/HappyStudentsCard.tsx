@@ -1,13 +1,13 @@
 import { Star } from "lucide-react";
 import SmallCard from "../SmallCard";
 
-import student1 from "../../assets/students/Student 1.png";
-import student2 from "../../assets/students/Student 2.png";
-import student3 from "../../assets/students/Student 3.png";
-import student4 from "../../assets/students/Student 4.png";
-import student5 from "../../assets/students/Student 5.png";
-import student6 from "../../assets/students/Student 6.png";
-import student7 from "../../assets/students/Student 7.png";
+import student1 from "../../assets/users/Student 1.png";
+import student2 from "../../assets/users/Student 2.png";
+import student3 from "../../assets/users/Student 3.png";
+import student4 from "../../assets/users/Student 4.png";
+import student5 from "../../assets/users/Student 5.png";
+import student6 from "../../assets/users/Student 6.png";
+import student7 from "../../assets/users/Student 7.png";
 
 const HappyStudentsCard = () => {
   return (

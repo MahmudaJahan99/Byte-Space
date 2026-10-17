@@ -1,16 +1,16 @@
-import student1 from "../../assets/students/Student 1.png";
-import student2 from "../../assets/students/Student 2.png";
-import student3 from "../../assets/students/Student 3.png";
-import student4 from "../../assets/students/Student 4.png";
-import student5 from "../../assets/students/Student 5.png";
-import student6 from "../../assets/students/Student 6.png";
-import student7 from "../../assets/students/Student 7.png";
-import student8 from "../../assets/students/Student 8.png";
-import student9 from "../../assets/students/Student 9.png";
-import student10 from "../../assets/students/Student 10.png";
-import student11 from "../../assets/students/Student 11.png";
-import student12 from "../../assets/students/Student 12.png";
-import student13 from "../../assets/students/Student 13.png";
+import student1 from "../../assets/users/Student 1.png";
+import student2 from "../../assets/users/Student 2.png";
+import student3 from "../../assets/users/Student 3.png";
+import student4 from "../../assets/users/Student 4.png";
+import student5 from "../../assets/users/Student 5.png";
+import student6 from "../../assets/users/Student 6.png";
+import student7 from "../../assets/users/Student 7.png";
+import student8 from "../../assets/users/Student 8.png";
+import student9 from "../../assets/users/Student 9.png";
+import student10 from "../../assets/users/Student 10.png";
+import student11 from "../../assets/users/Student 11.png";
+import student12 from "../../assets/users/Student 12.png";
+import student13 from "../../assets/users/Student 13.png";
 
 interface StudentsImageStackProps {
   comments: number;
