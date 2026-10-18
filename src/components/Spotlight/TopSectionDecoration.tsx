@@ -5,7 +5,7 @@ import yellowSquiggle from "../../assets/decorations/Yellow Squiggle 2.webp";
 const TopSectionDecoration = () => {
   return (
     <div className="relative w-full overflow-hidden">
-      <div className="relative w-[70%] lg:w-[60%] top-0 left-0 z-0">
+      <div className="relative w-[70%] lg:w-[60%] top-0 left-0 z-0 mb-15 lg:mb-30">
         <DemoCourseCard />
       </div>
 

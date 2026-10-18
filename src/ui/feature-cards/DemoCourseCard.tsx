@@ -7,7 +7,7 @@ const DemoCourseCard = () => {
   return (
     <div
       aria-hidden="true"
-      className="border border-gray-border rounded-2xl lg:rounded-3xl p-2 md:p-3 lg:p-4 flex flex-col bg-white pointer-events-none select-none max-w-100 mb-15 lg:mb-30"
+      className="border border-gray-border rounded-2xl lg:rounded-3xl p-2 md:p-3 lg:p-4 flex flex-col bg-white pointer-events-none select-none max-w-100"
     >
       {/* Image */}
       <div className="relative mb-[1%] overflow-hidden rounded-xl lg:rounded-2xl">
