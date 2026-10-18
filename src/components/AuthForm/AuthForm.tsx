@@ -74,7 +74,7 @@ const AuthForm = ({
               placeholder={field.placeholder}
               autoComplete={field.autoComplete}
               required={field.required ?? true}
-              className="h-13 w-full rounded-xl border border-gray-300 px-6 py-3 text-sm text-gray-900 outline-none transition focus:border-electric-blue focus:ring-2 focus:ring-electric-blue/20"
+              className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition focus:border-electric-blue/50 focus:ring-2 focus:ring-electric-blue/20"
             />
           </div>
         ))}
@@ -144,7 +144,7 @@ const AuthForm = ({
           {footerText}
           <Link
             to={footerLinkTo}
-            className="text-electric-blue underline-offset-2 hover:underline focus:outline-none focus:ring-2 focus:ring-electric-blue/20 focus:ring-offset-2"
+            className="text-electric-blue underline-offset-2 hover:underline focus:outline-none focus:ring-2 focus:ring-electric-blue/20 focus:ring-offset-2 ml-1"
           >
             {footerLinkText}
           </Link>
