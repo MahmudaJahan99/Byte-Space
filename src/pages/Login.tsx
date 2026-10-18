@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "../ui/Logo";
-import loginSignup from "../assets/login-signup.png";
 import AuthForm from "../components/AuthForm/AuthForm";
+import AuthDecoration from "../components/AuthForm/AuthDecoration";
 
 const Login = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,33 +35,19 @@ const Login = () => {
         </div>
       </nav>
 
-      <main className="mx-auto grid min-h-screen max-w-7xl items-stretch px-4 pt-20 pb-10 md:grid-cols-2 md:gap-12 md:px-8">
+      <main className="mx-auto grid min-h-screen max-w-7xl items-stretch px-4 pt-20 pb-10 lg:grid-cols-2 lg:gap-12 lg:px-8 overflow-hidden">
         {/* Promotional content */}
-        <section
-          aria-labelledby="login-promo-title"
-          className="hidden flex-col justify-center text-lightest-gray md:flex"
-        >
-          <div className="max-w-xl">
-            <h1 id="login-promo-title" className="text-xl">
-              Sign in with ease
-            </h1>
-
-            <p>
-              Experience a seamless and efficient sign-in process that grants
-              you instant access to a world of knowledge.
-            </p>
-
-            <img
-              src={loginSignup}
-              alt=""
-              aria-hidden="true"
-              className="mt-8 w-full max-w-lg object-contain"
-            />
-          </div>
-        </section>
+        <AuthDecoration
+          title="Sign in with ease"
+          subtitle="Experience a seamless and efficient sign-in process that grants
+              you instant access to a world of knowledge."
+        />
 
         {/* Form */}
-        <section aria-label="Sign in form" className="flex items-center">
+        <section
+          aria-label="Sign in form"
+          className="flex items-center justify-center md:mx-auto md:w-full md:max-w-xl lg:max-w-none"
+        >
           <AuthForm
             title="Sign In"
             subtitle="Welcome Back"

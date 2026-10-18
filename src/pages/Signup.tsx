@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "../ui/Logo";
-import loginSignup from "../assets/login-signup.png";
 import AuthForm from "../components/AuthForm/AuthForm";
+import AuthDecoration from "../components/AuthForm/AuthDecoration";
 
 const Signup = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,7 +18,7 @@ const Signup = () => {
   return (
     <div className="min-h-screen w-full bg-electric-blue">
       <title>ByteSpace | Signup</title>
-      
+
       {/* Top Nav */}
       <nav
         aria-label="Primary navigation"
@@ -35,34 +35,20 @@ const Signup = () => {
         </div>
       </nav>
 
-      <main className="mx-auto grid min-h-screen max-w-7xl items-stretch px-4 pt-20 pb-10 md:grid-cols-2 md:gap-12 md:px-8">
+      <main className="mx-auto grid min-h-screen max-w-7xl items-stretch px-4 pt-20 pb-10 lg:grid-cols-2 lg:gap-12 lg:px-8">
         {/* Promotional content */}
-        <section
-          aria-labelledby="signup-promo-title"
-          className="hidden flex-col justify-center text-lightest-gray md:flex"
-        >
-          <div className="max-w-xl">
-            <h1 id="signup-promo-title" className="text-xl">
-              Sign up and come in
-            </h1>
-
-            <p>
-              The registration process is straightforward, uncomplicated, and
+        <AuthDecoration
+          title="Sign up and come in"
+          subtitle="The registration process is straightforward, uncomplicated, and
               efficient, allowing users to sign up quickly, easily, and at no
-              cost.
-            </p>
-
-            <img
-              src={loginSignup}
-              alt=""
-              aria-hidden="true"
-              className="mt-8 w-full max-w-lg object-contain"
-            />
-          </div>
-        </section>
+              cost."
+        />
 
         {/* Form */}
-        <section aria-label="Create account form" className="flex items-center">
+        <section
+          aria-label="Create account form"
+          className="flex items-center justify-center md:mx-auto md:w-full md:max-w-xl lg:max-w-none"
+        >
           <AuthForm
             title="Create an Account"
             subtitle="Welcome to ByteSpace"
