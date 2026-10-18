@@ -27,7 +27,7 @@ const CreatorCTA = () => {
           </p>
         </div>
 
-        <Button buttonName="Join as Creator" className="w-fit text-dark-gray" />
+        <Button buttonName="Join as Creator" className="w-fit" />
       </div>
     </article>
   );
