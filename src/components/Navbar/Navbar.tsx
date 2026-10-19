@@ -1,35 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import DesktopNavigation from "./DesktopNavigation";
 import MobileNavigation from "./MobileNavigation";
+import useScrolled from "../../hooks/useScrolled";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
+  const isScrolling = useScrolled();
 
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-
-  // Blue glass background after the user scrolls
-  useEffect(() => {
-    let scrollTimeout: ReturnType<typeof setTimeout>;
-
-    const onScroll = () => {
-      setIsScrolling(true);
-
-      clearTimeout(scrollTimeout);
-
-      scrollTimeout = setTimeout(() => {
-        setIsScrolling(false);
-      }, 200);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      clearTimeout(scrollTimeout);
-    };
-  }, []);
 
   // Lock page scroll while the mobile menu is open
   useEffect(() => {
@@ -68,7 +47,7 @@ const Navbar = () => {
     menuButtonRef.current?.focus();
   }, []);
 
-  // Allow users to close the mobile menu with Escape
+  // Close the mobile menu with Escape
   useEffect(() => {
     if (!isMenuOpen) return;
 
@@ -89,9 +68,7 @@ const Navbar = () => {
     <nav
       aria-label="Primary navigation"
       className={`fixed top-0 z-999 w-full h-18 transition-all duration-500 ease-in-out motion-reduce:transition-none ${
-        isScrolling
-          ? "border-b border-white/10 bg-electric-blue/75 shadow-md backdrop-blur-lg"
-          : "border-b border-transparent bg-electric-blue"
+        isScrolling ? "navbar-glass" : "navbar-transparent"
       }`}
     >
       {/* Desktop Navbar */}
