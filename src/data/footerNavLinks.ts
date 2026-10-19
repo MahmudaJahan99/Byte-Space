@@ -60,7 +60,7 @@ export const creatorLinks: FooterNavLink[] = [
   },
   {
     label: "Contact",
-    linkTo: "/",
+    linkTo: "/contact",
   },
   {
     label: "Help",

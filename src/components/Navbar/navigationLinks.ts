@@ -10,7 +10,7 @@ interface NavigationLink {
 export const navLinksCenter = [
   { to: "/", label: "Home" },
   { to: "/courses", label: "Courses" },
-  { to: "/creators", label: "Creators" },
+  { to: "/contact", label: "Contact" },
 ] satisfies NavigationLink[];
 
 export const navLinksRight = [
