@@ -37,6 +37,16 @@
     }
 }
 
+@layer components {
+  .navbar-glass {
+    @apply border-b border-white/10 bg-electric-blue/75 shadow-md backdrop-blur-lg;
+  }
+
+  .navbar-transparent {
+    @apply border-b border-transparent bg-electric-blue;
+  }
+}
+
 @utility page-section {
     width: 90%;
     max-width: 90%;

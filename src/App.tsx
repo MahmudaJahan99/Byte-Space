@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import ErrorPage from "./pages/ErrorPage";
 import MainLayout from "./layouts/MainLayout";
 import Courses from "./pages/Courses";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "courses", element: <Courses /> },
+      { path: "contact", element: <Contact /> },
     ],
   },
 
