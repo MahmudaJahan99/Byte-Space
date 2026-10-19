@@ -6,53 +6,53 @@ export interface FooterNavLink {
 export const featuredLinks: FooterNavLink[] = [
   {
     label: "Featured Courses",
-    linkTo: "/",
+    linkTo: "/courses",
   },
   {
     label: "Featured Categories",
-    linkTo: "/",
+    linkTo: "/courses",
   },
   {
     label: "Business",
-    linkTo: "/",
+    linkTo: "/courses?category=Business",
   },
   {
-    label: "IT",
-    linkTo: "/",
+    label: "Data Science",
+    linkTo: "/courses?category=Data%Science",
   },
   {
     label: "Design",
-    linkTo: "/",
+    linkTo: "/courses?category=Graphic%Design",
   },
 ];
 
 export const categoryLinks: FooterNavLink[] = [
   {
     label: "Development",
-    linkTo: "/",
+    linkTo: "/courses?category=Web%20Development",
   },
   {
     label: "Marketing",
-    linkTo: "/",
+    linkTo: "/courses?category=Marketing",
   },
   {
     label: "Photography",
-    linkTo: "/",
+    linkTo: "/courses?category=Photography",
   },
   {
-    label: "Finance",
-    linkTo: "/",
+    label: "Music",
+    linkTo: "/courses?category=Music",
   },
   {
-    label: "Sport",
-    linkTo: "/",
+    label: "Cooking",
+    linkTo: "/courses?category=Cooking",
   },
 ];
 
 export const creatorLinks: FooterNavLink[] = [
   {
     label: "Become a Creator",
-    linkTo: "/",
+    linkTo: "#creator-cta",
   },
   {
     label: "Affiliate Program",
@@ -79,10 +79,6 @@ export const policyAndTerms: FooterNavLink[] = [
   },
   {
     label: "Terms of Service",
-    linkTo: "/",
-  },
-  {
-    label: " Cookies Settings",
     linkTo: "/",
   },
 ];

@@ -5,6 +5,7 @@ const CreatorCTA = () => {
   return (
     <article
       aria-labelledby="creator-cta-heading"
+      id="creator-cta"
       className="bg-electric-blue relative isolate overflow-hidden"
     >
       {/* Decorations */}

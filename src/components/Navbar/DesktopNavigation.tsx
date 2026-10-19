@@ -16,7 +16,7 @@ const DesktopNavigation = ({
   menuButtonRef,
 }: DesktopNavigationProps) => {
   return (
-    <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:grid md:h-20 md:grid-cols-3 md:px-8">
+    <div className="mx-auto flex h-18 items-center justify-between max-w-7xl px-4 md:px-8 md:grid md:grid-cols-3">
       {/* Logo */}
       <Logo imageSrc="/logo.png" />
 

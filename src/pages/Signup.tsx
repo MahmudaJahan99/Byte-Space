@@ -22,20 +22,20 @@ const Signup = () => {
       {/* Top Nav */}
       <nav
         aria-label="Primary navigation"
-        className={`fixed top-0 z-999 w-full transition-all duration-300 h-20 motion-reduce:transition-none ${
+        className={`fixed top-0 z-999 w-full transition-all duration-300 h-18 motion-reduce:transition-none ${
           isScrolled
             ? "border-b border-white/10 bg-electric-blue shadow-lg backdrop-blur-lg"
             : "border-b border-transparent bg-transparent"
         }`}
       >
         {/* Main Navbar */}
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:grid md:h-20 md:grid-cols-3 md:px-8">
+        <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 md:grid md:grid-cols-3 md:px-8">
           {/* Logo */}
           <Logo imageSrc="/logo.png" />
         </div>
       </nav>
 
-      <main className="mx-auto grid min-h-screen max-w-7xl items-stretch px-4 pt-20 pb-10 lg:grid-cols-2 lg:gap-12 lg:px-8">
+      <main className="mx-auto grid min-h-screen max-w-7xl items-stretch px-4 pt-20 pb-10 lg:grid-cols-2 lg:gap-12 lg:px-8 overflow-hidden">
         {/* Promotional content */}
         <AuthDecoration
           title="Sign up and come in"
