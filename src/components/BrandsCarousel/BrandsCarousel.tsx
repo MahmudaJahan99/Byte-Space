@@ -1,21 +1,6 @@
-import comapanyLogo1 from "../../assets/companies/amazon.svg";
-import comapanyLogo2 from "../../assets/companies/android.svg";
-import comapanyLogo3 from "../../assets/companies/docker.svg";
-import comapanyLogo4 from "../../assets/companies/figma.svg";
-import comapanyLogo5 from "../../assets/companies/react.svg";
-import comapanyLogo6 from "../../assets/companies/pinterest.svg";
-import comapanyLogo7 from "../../assets/companies/shell.svg";
+import { companyData } from "../../data/brandNames";
 import BrandItem from "./BrandItem";
 
-const companyData = [
-  { name: "Amazon", imageSrc: comapanyLogo1 },
-  { name: "Android", imageSrc: comapanyLogo2 },
-  { name: "Docker", imageSrc: comapanyLogo3 },
-  { name: "Figma", imageSrc: comapanyLogo4 },
-  { name: "React", imageSrc: comapanyLogo5 },
-  { name: "Pinterest", imageSrc: comapanyLogo6 },
-  { name: "Shell", imageSrc: comapanyLogo7 },
-];
 const BrandsCarousel = () => {
   return (
     <section

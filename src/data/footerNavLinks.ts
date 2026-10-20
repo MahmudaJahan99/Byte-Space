@@ -56,7 +56,7 @@ export const creatorLinks: FooterNavLink[] = [
   },
   {
     label: "Affiliate Program",
-    linkTo: "/",
+    linkTo: "/affiliate-program",
   },
   {
     label: "Contact",
@@ -64,21 +64,21 @@ export const creatorLinks: FooterNavLink[] = [
   },
   {
     label: "Help",
-    linkTo: "/",
+    linkTo: "/help",
   },
   {
     label: "About",
-    linkTo: "/",
+    linkTo: "/about",
   },
 ];
 
 export const policyAndTerms: FooterNavLink[] = [
   {
     label: "Privacy Policy",
-    linkTo: "/",
+    linkTo: "/privacy-policy",
   },
   {
     label: "Terms of Service",
-    linkTo: "/",
+    linkTo: "/terms-of-service",
   },
 ];
