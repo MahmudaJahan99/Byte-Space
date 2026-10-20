@@ -38,13 +38,13 @@
 }
 
 @layer components {
-  .navbar-glass {
-    @apply border-b border-white/10 bg-electric-blue/75 shadow-md backdrop-blur-lg;
-  }
+    .navbar-glass {
+        @apply border-b border-white/10 bg-electric-blue/75 shadow-md backdrop-blur-lg;
+    }
 
-  .navbar-transparent {
-    @apply border-b border-transparent bg-electric-blue;
-  }
+    .navbar-transparent {
+        @apply border-b border-transparent bg-electric-blue;
+    }
 }
 
 @utility page-section {
@@ -68,6 +68,24 @@
         max-width: 90%;
     }
 }
+
+/* focus styles */
+@utility blue-focus {
+    @apply outline-none ring-electric-blue border-electric-blue/50 ring-2 ring-offset-2;
+}
+@utility blueLarge-focus {
+    @apply outline-2 outline-offset-4 outline-electric-blue;
+}
+
+@utility light-focus {
+    @apply outline-none ring-electric-blue/20 ring-2;
+}
+
+@utility yellow-focus {
+    @apply outline-2 outline-offset-2 outline-electric-lime;
+}
+
+/* form input styles */
 
 body {
     /* background-color: #003be2; */

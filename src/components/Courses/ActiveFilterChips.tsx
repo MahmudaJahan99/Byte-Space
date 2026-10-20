@@ -1,6 +1,6 @@
-
 import type { Course } from "../../data/courseDetails";
 import type { SortOption } from "../../utils/courseFilters";
+import styles from "./Courses.module.css";
 
 interface ActiveFilterChipsProps {
   category: string | null;
@@ -28,9 +28,7 @@ const ActiveFilterChips = ({
   onRemoveSort,
   onClearAll,
 }: ActiveFilterChipsProps) => {
-  const hasActiveFilters = Boolean(
-    category || selectedLevel || sortOption,
-  );
+  const hasActiveFilters = Boolean(category || selectedLevel || sortOption);
 
   if (!hasActiveFilters) return null;
 
@@ -39,16 +37,14 @@ const ActiveFilterChips = ({
       aria-label="Applied filters"
       className="my-5 flex flex-wrap items-center gap-2"
     >
-      <span className="mr-1 text-sm font-medium">
-        Applied filters:
-      </span>
+      <span className="mr-1 text-sm font-medium">Applied filters:</span>
 
       {category && (
         <button
           type="button"
           onClick={onRemoveCategory}
           aria-label={`Remove category filter: ${category}`}
-          className="inline-flex items-center gap-2 rounded-full border border-gray-border px-3 py-1.5 text-sm hover:bg-lightest-gray"
+          className={`${styles.activeFilterBtn} hover:bg-lightest-gray focus:light-focus`}
         >
           {category}
           <span aria-hidden="true">×</span>
@@ -60,7 +56,7 @@ const ActiveFilterChips = ({
           type="button"
           onClick={onRemoveLevel}
           aria-label={`Remove level filter: ${selectedLevel}`}
-          className="inline-flex items-center gap-2 rounded-full border border-gray-border px-3 py-1.5 text-sm hover:bg-lightest-gray"
+          className={`${styles.activeFilterBtn} hover:bg-lightest-gray focus:light-focus`}
         >
           {selectedLevel}
           <span aria-hidden="true">×</span>
@@ -72,7 +68,7 @@ const ActiveFilterChips = ({
           type="button"
           onClick={onRemoveSort}
           aria-label={`Remove sorting: ${sortLabels[sortOption]}`}
-          className="inline-flex items-center gap-2 rounded-full border border-gray-border px-3 py-1.5 text-sm hover:bg-lightest-gray"
+          className={`${styles.activeFilterBtn} hover:bg-lightest-gray focus:light-focus`}
         >
           {sortLabels[sortOption]}
           <span aria-hidden="true">×</span>
@@ -82,7 +78,7 @@ const ActiveFilterChips = ({
       <button
         type="button"
         onClick={onClearAll}
-        className="ml-1 text-sm underline underline-offset-4"
+        className="ml-1 text-sm underline underline-offset-4 focus:light-focus"
       >
         Clear all
       </button>

@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Filter, Shapes, Signal } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-
-import type { Course } from "../../data/courseDetails";
 import { courseCategories } from "../../data/courseCategories";
+import type { Course } from "../../data/courseDetails";
 import type { SortOption } from "../../utils/courseFilters";
+import styles from "./Courses.module.css";
 
 type OpenMenu = "filter" | "level" | "category" | null;
 
@@ -44,7 +44,7 @@ const FilterDropdown = ({
         aria-expanded={isOpen}
         aria-controls={menuId}
         onClick={onToggle}
-        className="flex items-center gap-2 rounded-2xl border border-gray-border px-2.5 py-1.5 hover:bg-lightest-gray focus-visible:outline-2 focus-visible:outline-offset-2"
+        className={`${styles.filterBtn} focus:light-focus`}
       >
         <Icon aria-hidden="true" className="h-4 w-4" />
         <span>{label}</span>
@@ -62,9 +62,6 @@ const FilterDropdown = ({
     </div>
   );
 };
-
-const optionClass =
-  "block w-full rounded-lg px-4 py-2 text-left hover:bg-lightest-gray focus-visible:bg-lightest-gray focus-visible:outline-none";
 
 const CourseFilters = ({
   selectedLevel,
@@ -136,7 +133,7 @@ const CourseFilters = ({
             type="button"
             aria-pressed={sortOption === option.value}
             onClick={() => selectSort(option.value)}
-            className={optionClass}
+            className={styles.dropdownOption}
           >
             {option.label}
           </button>
@@ -145,7 +142,7 @@ const CourseFilters = ({
         <button
           type="button"
           onClick={() => selectSort(null)}
-          className={optionClass}
+          className={styles.dropdownOption}
         >
           Default order
         </button>
@@ -166,7 +163,7 @@ const CourseFilters = ({
             type="button"
             aria-pressed={selectedLevel === level}
             onClick={() => selectLevel(level)}
-            className={optionClass}
+            className={styles.dropdownOption}
           >
             {level ?? "All Levels"}
           </button>
@@ -185,7 +182,7 @@ const CourseFilters = ({
         <button
           type="button"
           onClick={() => selectCategory(null)}
-          className={optionClass}
+          className={styles.dropdownOption}
         >
           All Categories
         </button>
@@ -197,7 +194,7 @@ const CourseFilters = ({
               key={category}
               type="button"
               onClick={() => selectCategory(category)}
-              className={optionClass}
+              className={styles.dropdownOption}
             >
               {category}
             </button>

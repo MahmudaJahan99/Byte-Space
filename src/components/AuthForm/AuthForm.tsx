@@ -54,6 +54,7 @@ const AuthForm = ({
         >
           {title}
         </h2>
+
         <h3>{subtitle}</h3>
       </div>
 
@@ -67,6 +68,7 @@ const AuthForm = ({
             >
               {field.label}
             </label>
+
             <input
               type={field.type}
               name={field.name}
@@ -74,7 +76,7 @@ const AuthForm = ({
               placeholder={field.placeholder}
               autoComplete={field.autoComplete}
               required={field.required ?? true}
-              className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition focus:border-electric-blue/50 focus:ring-2 focus:ring-electric-blue/20"
+              className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm transition-all focus:blue-focus"
             />
           </div>
         ))}
@@ -83,7 +85,7 @@ const AuthForm = ({
 
       {/* Action buttons */}
       <div className="mt-8 flex flex-col gap-5">
-        <div className="w-full lg:ml-auto lg:w-fit">
+        <div className="w-full lg:w-fit lg:ml-auto">
           <Button
             buttonName={buttonName}
             type="submit"
@@ -94,6 +96,7 @@ const AuthForm = ({
         {/* Social Login */}
         {showSocialLogin && (
           <>
+            {/* Divider */}
             <div
               className="flex items-center gap-4"
               role="separator"
@@ -106,13 +109,14 @@ const AuthForm = ({
               <div className="h-px flex-1 bg-gray-200" aria-hidden="true" />
             </div>
 
+            {/* Socials buttons */}
             <fieldset>
               <legend className="sr-only">Social login options</legend>
               <div className="flex items-center justify-center gap-4">
                 <button
                   type="button"
                   aria-label="Continue with Facebook"
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-300 transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-electric-blue/20"
+                  className="h-12 w-12 flex items-center justify-center rounded-xl border border-gray-300 transition hover:bg-gray-50 focus:light-focus"
                 >
                   <img
                     src="/facebook-icon.png"
@@ -125,7 +129,7 @@ const AuthForm = ({
                 <button
                   type="button"
                   aria-label="Continue with Google"
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-300 transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-electric-blue/20"
+                  className="h-12 w-12 flex items-center justify-center rounded-xl border border-gray-300 transition hover:bg-gray-50 focus:light-focus"
                 >
                   <img
                     src="/google-icon.png"
@@ -144,7 +148,7 @@ const AuthForm = ({
           {footerText}
           <Link
             to={footerLinkTo}
-            className="text-electric-blue underline-offset-2 hover:underline focus:outline-none focus:ring-2 focus:ring-electric-blue/20 focus:ring-offset-2 ml-1"
+            className="text-electric-blue underline-offset-2 hover:underline focus:light-focus ml-1"
           >
             {footerLinkText}
           </Link>

@@ -13,8 +13,7 @@ const Button = ({
   return (
     <button
       type={type}
-      className={`text-dark-gray rounded-full cursor-pointer bg-electric-lime px-5 py-2 font-medium transition-all hover:bg-electric-lime/90 duration-300 ease-out hover:-translate-y-1
-        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-electric-lime md:px-6 md:py-4 
+      className={`text-dark-gray rounded-full cursor-pointer px-5 py-2 md:px-6 md:py-4 bg-electric-lime font-medium transition-all hover:bg-electric-lime/90 duration-300 ease-out hover:-translate-y-1 focus:yellow-focus
         ${className}`}
       {...props}
     >

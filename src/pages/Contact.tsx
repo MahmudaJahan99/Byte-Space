@@ -81,7 +81,7 @@ const Contact = () => {
                       id="firstName"
                       placeholder="John"
                       required
-                      className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition focus:border-electric-blue/50 focus:ring-2 focus:ring-electric-blue/20"
+                      className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm transition-all focus:blue-focus"
                     />
                   </div>
                   <div className="flex flex-col gap-0.5">
@@ -97,7 +97,7 @@ const Contact = () => {
                       id="lastName"
                       placeholder="Doe"
                       required
-                      className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition focus:border-electric-blue/50 focus:ring-2 focus:ring-electric-blue/20"
+                      className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm transition-all focus:blue-focus"
                     />
                   </div>
                 </div>
@@ -116,7 +116,7 @@ const Contact = () => {
                       id="email"
                       placeholder="john@gmail.com"
                       required
-                      className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition focus:border-electric-blue/50 focus:ring-2 focus:ring-electric-blue/20"
+                      className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition-all focus:blue-focus"
                     />
                   </div>
                   <div className="flex flex-col gap-0.5">
@@ -131,7 +131,7 @@ const Contact = () => {
                       name="phoneNo"
                       id="phoneNo"
                       placeholder="+ 11 2233 4455"
-                      className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition focus:border-electric-blue/50 focus:ring-2 focus:ring-electric-blue/20"
+                      className="h-11.5 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition-all focus:blue-focus"
                     />
                   </div>
                 </div>
@@ -147,7 +147,7 @@ const Contact = () => {
                     name="message"
                     id="message"
                     placeholder="Share your thoughts with us..."
-                    className="h-25 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition focus:border-electric-blue/50 focus:ring-2 focus:ring-electric-blue/20"
+                    className="h-25 w-full rounded-xl border border-gray-300 px-4 py-2 text-sm outline-none transition-all focus:blue-focus"
                   ></textarea>
                 </div>
               </div>

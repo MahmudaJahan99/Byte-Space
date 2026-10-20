@@ -3,6 +3,7 @@ import GlassBadge from "../../ui/GlassBadge";
 import type { Course } from "../../data/courseDetails";
 import { Link } from "react-router-dom";
 import StudentsImageStack from "./StudentsImageStack";
+import styles from "./Courses.module.css";
 
 interface CourseCardProps {
   course: Course;
@@ -13,8 +14,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
     <Link
       to="/course"
       aria-labelledby={`course-title-${course.id}`}
-      className="group h-full border border-gray-border rounded-3xl p-4 flex flex-col transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover/50 hover motion-reduce motion-reduce:hover cursor-pointer
-      focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-electric-blue"
+      className={`${styles.courseCard} motion-reduce motion-reduce:hover focus:blueLarge-focus`}
     >
       {/* Image */}
       <div className="relative mb-4 overflow-hidden rounded-2xl">
@@ -22,7 +22,7 @@ const CourseCard = ({ course }: CourseCardProps) => {
           src={course.image}
           alt={course.title}
           loading="lazy"
-          className="w-full transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          className={`${styles.courseCardImg} motion-reduce:transition-none motion-reduce:group-hover:scale-100`}
         />
 
         <div

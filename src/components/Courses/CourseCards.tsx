@@ -21,7 +21,8 @@ const CourseCards = ({ courses, limit, pageSize }: CourseCardsProps) => {
 
   return (
     <>
-      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 my-8 items-stretch">
+      {/* Course Cards */}
+      <ul className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 items-stretch">
         {displayedCourses.map((course) => (
           <li key={course.id} className="h-full">
             <CourseCard course={course} />
@@ -29,6 +30,7 @@ const CourseCards = ({ courses, limit, pageSize }: CourseCardsProps) => {
         ))}
       </ul>
 
+      {/* Pagination */}
       {pageSize && (
         <Pagination
           page={page}
